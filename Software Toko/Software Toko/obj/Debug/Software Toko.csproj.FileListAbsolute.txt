@@ -19,3 +19,14 @@ F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.L
 F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Properties.Resources.resources
 F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software Toko.csproj.GenerateResource.Cache
 F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Logout.resources
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\bin\Debug\Software Toko.exe.config
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software Toko.exe
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software Toko.pdb
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\bin\Debug\Software Toko.exe
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\bin\Debug\Software Toko.pdb
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software Toko.csprojResolveAssemblyReference.cache
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Form1.resources
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Login.resources
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Logout.resources
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Properties.Resources.resources
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software Toko.csproj.GenerateResource.Cache
