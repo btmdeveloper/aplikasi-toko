@@ -8,3 +8,14 @@ F:\Aplikasi\Bali Tunjung Media\Software Toko\Software Toko\obj\Debug\Software To
 F:\Aplikasi\Bali Tunjung Media\Software Toko\Software Toko\obj\Debug\Software Toko.exe
 F:\Aplikasi\Bali Tunjung Media\Software Toko\Software Toko\obj\Debug\Software Toko.pdb
 F:\Aplikasi\Bali Tunjung Media\Software Toko\Software Toko\obj\Debug\Software_Toko.Login.resources
+F:\BTM\Software Toko\trunk\Software Toko\Software Toko\bin\Debug\Software Toko.exe.config
+F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software Toko.exe
+F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software Toko.pdb
+F:\BTM\Software Toko\trunk\Software Toko\Software Toko\bin\Debug\Software Toko.exe
+F:\BTM\Software Toko\trunk\Software Toko\Software Toko\bin\Debug\Software Toko.pdb
+F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software Toko.csprojResolveAssemblyReference.cache
+F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Form1.resources
+F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Login.resources
+F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Properties.Resources.resources
+F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software Toko.csproj.GenerateResource.Cache
+F:\BTM\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Logout.resources

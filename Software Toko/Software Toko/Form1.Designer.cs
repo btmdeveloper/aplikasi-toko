@@ -45,15 +45,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabKasir = new System.Windows.Forms.TabPage();
-            this.tabPembelian = new System.Windows.Forms.TabPage();
-            this.tabMaster = new System.Windows.Forms.TabPage();
-            this.tabLaporan = new System.Windows.Forms.TabPage();
-            this.tabKaryawan = new System.Windows.Forms.TabPage();
-            this.tabBantuan = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.kodeBarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namaBarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,12 +53,21 @@
             this.jumlah = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diskon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabPembelian = new System.Windows.Forms.TabPage();
+            this.tabMaster = new System.Windows.Forms.TabPage();
+            this.tabLaporan = new System.Windows.Forms.TabPage();
+            this.tabKaryawan = new System.Windows.Forms.TabPage();
+            this.tabBantuan = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabKasir.SuspendLayout();
@@ -185,6 +185,7 @@
             this.tabControl1.Padding = new System.Drawing.Point(8, 3);
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1361, 612);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 2;
             // 
             // tabKasir
@@ -197,96 +198,13 @@
             this.tabKasir.Controls.Add(this.textBox1);
             this.tabKasir.ImageIndex = 0;
             this.tabKasir.Location = new System.Drawing.Point(4, 64);
+            this.tabKasir.Margin = new System.Windows.Forms.Padding(5);
             this.tabKasir.Name = "tabKasir";
             this.tabKasir.Padding = new System.Windows.Forms.Padding(3);
             this.tabKasir.Size = new System.Drawing.Size(1353, 544);
             this.tabKasir.TabIndex = 0;
             this.tabKasir.Text = "Kasir";
             this.tabKasir.ToolTipText = "Menu Penjualan (Kasir)";
-            // 
-            // tabPembelian
-            // 
-            this.tabPembelian.ImageIndex = 1;
-            this.tabPembelian.Location = new System.Drawing.Point(4, 64);
-            this.tabPembelian.Name = "tabPembelian";
-            this.tabPembelian.Size = new System.Drawing.Size(1012, 544);
-            this.tabPembelian.TabIndex = 2;
-            this.tabPembelian.Text = "Pembelian";
-            this.tabPembelian.UseVisualStyleBackColor = true;
-            // 
-            // tabMaster
-            // 
-            this.tabMaster.ImageIndex = 2;
-            this.tabMaster.Location = new System.Drawing.Point(4, 64);
-            this.tabMaster.Name = "tabMaster";
-            this.tabMaster.Size = new System.Drawing.Size(1012, 544);
-            this.tabMaster.TabIndex = 3;
-            this.tabMaster.Text = "Barang";
-            this.tabMaster.UseVisualStyleBackColor = true;
-            // 
-            // tabLaporan
-            // 
-            this.tabLaporan.ImageIndex = 3;
-            this.tabLaporan.Location = new System.Drawing.Point(4, 64);
-            this.tabLaporan.Name = "tabLaporan";
-            this.tabLaporan.Size = new System.Drawing.Size(1012, 544);
-            this.tabLaporan.TabIndex = 4;
-            this.tabLaporan.Text = "Laporan";
-            this.tabLaporan.UseVisualStyleBackColor = true;
-            // 
-            // tabKaryawan
-            // 
-            this.tabKaryawan.ImageIndex = 4;
-            this.tabKaryawan.Location = new System.Drawing.Point(4, 64);
-            this.tabKaryawan.Name = "tabKaryawan";
-            this.tabKaryawan.Size = new System.Drawing.Size(1012, 544);
-            this.tabKaryawan.TabIndex = 5;
-            this.tabKaryawan.Text = "Karyawan";
-            this.tabKaryawan.UseVisualStyleBackColor = true;
-            // 
-            // tabBantuan
-            // 
-            this.tabBantuan.ImageIndex = 5;
-            this.tabBantuan.Location = new System.Drawing.Point(4, 64);
-            this.tabBantuan.Name = "tabBantuan";
-            this.tabBantuan.Size = new System.Drawing.Size(1012, 544);
-            this.tabBantuan.TabIndex = 6;
-            this.tabBantuan.Text = "Bantuan";
-            this.tabBantuan.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(82, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tanggal";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "No. Faktur";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(82, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 20);
-            this.textBox2.TabIndex = 2;
             // 
             // dataGridView1
             // 
@@ -357,6 +275,90 @@
             this.total.Name = "total";
             this.total.ReadOnly = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "No. Faktur";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(82, 49);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(140, 20);
+            this.textBox2.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tanggal";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(82, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(140, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // tabPembelian
+            // 
+            this.tabPembelian.ImageIndex = 1;
+            this.tabPembelian.Location = new System.Drawing.Point(4, 64);
+            this.tabPembelian.Name = "tabPembelian";
+            this.tabPembelian.Size = new System.Drawing.Size(1353, 544);
+            this.tabPembelian.TabIndex = 2;
+            this.tabPembelian.Text = "Pembelian";
+            this.tabPembelian.UseVisualStyleBackColor = true;
+            // 
+            // tabMaster
+            // 
+            this.tabMaster.ImageIndex = 2;
+            this.tabMaster.Location = new System.Drawing.Point(4, 64);
+            this.tabMaster.Name = "tabMaster";
+            this.tabMaster.Size = new System.Drawing.Size(1353, 544);
+            this.tabMaster.TabIndex = 3;
+            this.tabMaster.Text = "Barang";
+            this.tabMaster.UseVisualStyleBackColor = true;
+            // 
+            // tabLaporan
+            // 
+            this.tabLaporan.ImageIndex = 3;
+            this.tabLaporan.Location = new System.Drawing.Point(4, 64);
+            this.tabLaporan.Name = "tabLaporan";
+            this.tabLaporan.Size = new System.Drawing.Size(1353, 544);
+            this.tabLaporan.TabIndex = 4;
+            this.tabLaporan.Text = "Laporan";
+            this.tabLaporan.UseVisualStyleBackColor = true;
+            // 
+            // tabKaryawan
+            // 
+            this.tabKaryawan.ImageIndex = 4;
+            this.tabKaryawan.Location = new System.Drawing.Point(4, 64);
+            this.tabKaryawan.Name = "tabKaryawan";
+            this.tabKaryawan.Size = new System.Drawing.Size(1353, 544);
+            this.tabKaryawan.TabIndex = 5;
+            this.tabKaryawan.Text = "Karyawan";
+            this.tabKaryawan.UseVisualStyleBackColor = true;
+            // 
+            // tabBantuan
+            // 
+            this.tabBantuan.ImageIndex = 5;
+            this.tabBantuan.Location = new System.Drawing.Point(4, 64);
+            this.tabBantuan.Name = "tabBantuan";
+            this.tabBantuan.Size = new System.Drawing.Size(1353, 544);
+            this.tabBantuan.TabIndex = 6;
+            this.tabBantuan.Text = "Bantuan";
+            this.tabBantuan.UseVisualStyleBackColor = true;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label4);
@@ -367,6 +369,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(152, 72);
             this.panel1.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(79, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "ID Pegawai";
             // 
             // button1
             // 
@@ -380,31 +391,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(95, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "User";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(79, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "ID Pegawai";
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(1, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1203, 72);
-            this.panel2.TabIndex = 6;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = global::Software_Toko.Properties.Resources.employee;
@@ -415,6 +401,22 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(95, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "User";
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(1, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1203, 72);
+            this.panel2.TabIndex = 6;
             // 
             // Form1
             // 

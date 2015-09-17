@@ -41,10 +41,18 @@ namespace Software_Toko
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login formLogin = new Login();
-            formLogin.ShowDialog();
-            this.Close();
+            if (GlobalVariabel.logedIn == 0)
+            {
+                this.Hide();
+                Login formLogin = new Login();
+                formLogin.ShowDialog();
+                this.Close();
+            }
+            else 
+            {
+                Logout formLogout = new Logout();
+                formLogout.ShowDialog();
+            }
         }
     }
 }
