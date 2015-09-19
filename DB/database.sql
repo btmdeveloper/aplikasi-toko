@@ -114,6 +114,24 @@ CREATE TABLE `tb_master_barang` (
 
 /*Data for the table `tb_master_barang` */
 
+/*Table structure for table `tb_master_pegawai` */
+
+DROP TABLE IF EXISTS `tb_master_pegawai`;
+
+CREATE TABLE `tb_master_pegawai` (
+  `id_pegawai` varchar(10) NOT NULL,
+  `nama_depan` varchar(50) DEFAULT NULL,
+  `nama_belakang` varchar(50) DEFAULT NULL,
+  `no_telp` varchar(20) DEFAULT NULL,
+  `alamat` varchar(100) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id_pegawai`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tb_master_pegawai` */
+
+insert  into `tb_master_pegawai`(`id_pegawai`,`nama_depan`,`nama_belakang`,`no_telp`,`alamat`,`status`) values ('00001','admin','admin','-','-',1);
+
 /*Table structure for table `tb_pembelian` */
 
 DROP TABLE IF EXISTS `tb_pembelian`;
@@ -162,6 +180,25 @@ CREATE TABLE `tb_stok` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tb_stok` */
+
+/*Table structure for table `tb_user` */
+
+DROP TABLE IF EXISTS `tb_user`;
+
+CREATE TABLE `tb_user` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+  `id_pegawai` varchar(10) DEFAULT NULL,
+  `role` varchar(20) DEFAULT NULL,
+  `namauser` varchar(20) DEFAULT NULL,
+  `sandi` varchar(20) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL,
+  `last_login` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tb_user` */
+
+insert  into `tb_user`(`id_user`,`id_pegawai`,`role`,`namauser`,`sandi`,`status`,`last_login`) values (1,'00001','admin','admin','admin',1,'2015-09-18 12:57:33');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

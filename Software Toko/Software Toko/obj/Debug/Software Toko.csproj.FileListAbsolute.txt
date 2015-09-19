@@ -30,3 +30,15 @@ D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_To
 D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Logout.resources
 D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Properties.Resources.resources
 D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software Toko.csproj.GenerateResource.Cache
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\bin\Debug\Software Toko.exe.config
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software Toko.exe
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software Toko.pdb
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\bin\Debug\Software Toko.exe
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\bin\Debug\Software Toko.pdb
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software Toko.csprojResolveAssemblyReference.cache
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software_Toko.Form1.resources
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software_Toko.Login.resources
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software_Toko.Logout.resources
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software_Toko.Properties.Resources.resources
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software Toko.csproj.GenerateResource.Cache
+F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software_Toko.Tambah_Pegawai.resources
