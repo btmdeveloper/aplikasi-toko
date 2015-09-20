@@ -380,6 +380,32 @@ namespace Software_Toko
             }
         }
 
+        public DataTable selectDetailStok(string id_barang)
+        {
+            con = new MySqlConnection(konf);
+            MySqlCommand query;
+            con.Open();
+            dt = new DataTable();
+            try
+            {
+
+                query = new MySqlCommand();
+                query.Connection = con;
+                //query.CommandText = "select * from '" + tabel + "'";
+                query.CommandText = "SELECT id_stok,stok_barang,harga_beli FROM tb_stok WHERE id_barang='" + id_barang + "' AND stok_barang>0 ORDER BY id_stok";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query);
+                adapter.Fill(dt);
+                con.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return dt;
+            }
+        }
+
         public void insertTbPembelian(string id_pembelian, double total_pembelian, double total_bayar, double kembalian, string id_pegawai)
         {
             con = new MySqlConnection(konf);
@@ -415,6 +441,52 @@ namespace Software_Toko
                 query.Connection = con;
                 query.CommandText = "INSERT INTO tb_detail_pembelian(no_faktur, id_barang, harga_beli, jumlah_barang, diskon, total, stok_awal, stok_akhir) VALUES ('" +
                     id_pembelian + "','" + id_barang + "','" + hrg_beli + "','" + qty + "','" + diskon + "','" + total + "','" + stok_awal + "','" + stok_akhir + "');";
+                query.ExecuteNonQuery();
+                query.Dispose();
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void insertTbPenjualan(string id_penjualan, double total_penjualan, double total_bayar, double kembalian, string id_pegawai)
+        {
+            con = new MySqlConnection(konf);
+            MySqlCommand query;
+            con.Open();
+            try
+            {
+
+                query = new MySqlCommand();
+                query.Connection = con;
+                query.CommandText = "INSERT INTO tb_penjualan(no_faktur, tgl_penjualan, total_penjualan, total_bayar, kembali, id_pegawai) VALUES ('" +
+                    id_penjualan + "',NOW(),'" + total_penjualan + "','" + total_bayar + "','" + kembalian + "','" + id_pegawai + "');";
+                query.ExecuteNonQuery();
+                query.Dispose();
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void insertTbDetailPenjualan(string id_penjualan, string id_barang, double hrg_jual, int qty, double diskon, double total_jual, double hrg_beli, double total_beli, int stok_awal, int stok_akhir)
+        {
+            con = new MySqlConnection(konf);
+            MySqlCommand query;
+            con.Open();
+            try
+            {
+
+                query = new MySqlCommand();
+                query.Connection = con;
+                query.CommandText = "INSERT INTO tb_detail_penjualan(no_faktur, id_barang, harga_jual, jumlah_barang, diskon, total_jual, harga_beli, total_beli, stok_awal, stok_akhir) VALUES ('" +
+                    id_penjualan + "','" + id_barang + "','" + hrg_jual + "','" + qty + "','" + diskon + "','" + total_jual + "', '" + hrg_beli + "','" + total_beli + "','" + stok_awal + "','" + stok_akhir + "');";
                 query.ExecuteNonQuery();
                 query.Dispose();
                 con.Close();

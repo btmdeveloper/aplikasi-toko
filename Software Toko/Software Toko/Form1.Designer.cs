@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -82,9 +82,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.bayarPenjualan = new System.Windows.Forms.Button();
             this.lblChange = new System.Windows.Forms.Label();
-            this.kembalianPenjualan = new System.Windows.Forms.TextBox();
+            this.txtKembalianPenjualan = new System.Windows.Forms.TextBox();
             this.lblPayment = new System.Windows.Forms.Label();
-            this.pembayaranPenjualan = new System.Windows.Forms.TextBox();
+            this.txtPembayaranPenjualan = new System.Windows.Forms.TextBox();
             this.txtTotalPenjualan = new System.Windows.Forms.TextBox();
             this.tabPembelian = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
@@ -354,9 +354,9 @@
             this.tabKasir.Controls.Add(this.button2);
             this.tabKasir.Controls.Add(this.bayarPenjualan);
             this.tabKasir.Controls.Add(this.lblChange);
-            this.tabKasir.Controls.Add(this.kembalianPenjualan);
+            this.tabKasir.Controls.Add(this.txtKembalianPenjualan);
             this.tabKasir.Controls.Add(this.lblPayment);
-            this.tabKasir.Controls.Add(this.pembayaranPenjualan);
+            this.tabKasir.Controls.Add(this.txtPembayaranPenjualan);
             this.tabKasir.Controls.Add(this.txtTotalPenjualan);
             this.tabKasir.ImageIndex = 6;
             this.tabKasir.Location = new System.Drawing.Point(4, 64);
@@ -388,13 +388,12 @@
             // 
             // dataGridViewPenjualan
             // 
-            this.dataGridViewPenjualan.AllowUserToAddRows = false;
             this.dataGridViewPenjualan.AllowUserToDeleteRows = false;
             this.dataGridViewPenjualan.AllowUserToOrderColumns = true;
             this.dataGridViewPenjualan.AllowUserToResizeColumns = false;
             this.dataGridViewPenjualan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridViewPenjualan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewPenjualan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewPenjualan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPenjualan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -409,6 +408,7 @@
             this.dataGridViewPenjualan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPenjualan.Size = new System.Drawing.Size(1337, 232);
             this.dataGridViewPenjualan.TabIndex = 69;
+            this.dataGridViewPenjualan.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewPenjualan_MouseClick);
             // 
             // Column1
             // 
@@ -498,6 +498,7 @@
             this.deleteBarangPenjualan.TabIndex = 66;
             this.deleteBarangPenjualan.Text = "-";
             this.deleteBarangPenjualan.UseVisualStyleBackColor = true;
+            this.deleteBarangPenjualan.Click += new System.EventHandler(this.deleteBarangPenjualan_Click);
             // 
             // updateBarangPenjualan
             // 
@@ -507,6 +508,7 @@
             this.updateBarangPenjualan.TabIndex = 65;
             this.updateBarangPenjualan.Text = "u";
             this.updateBarangPenjualan.UseVisualStyleBackColor = true;
+            this.updateBarangPenjualan.Click += new System.EventHandler(this.updateBarangPenjualan_Click);
             // 
             // addBarangPenjualan
             // 
@@ -516,6 +518,7 @@
             this.addBarangPenjualan.TabIndex = 63;
             this.addBarangPenjualan.Text = "+";
             this.addBarangPenjualan.UseVisualStyleBackColor = true;
+            this.addBarangPenjualan.Click += new System.EventHandler(this.addBarangPenjualan_Click);
             // 
             // label9
             // 
@@ -597,6 +600,7 @@
             this.txtDiskonBarangPenjualan.TabIndex = 59;
             this.txtDiskonBarangPenjualan.Text = "0";
             this.txtDiskonBarangPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDiskonBarangPenjualan.TextChanged += new System.EventHandler(this.txtDiskonBarangPenjualan_TextChanged);
             // 
             // txtJumlahBarangPenjualan
             // 
@@ -606,6 +610,7 @@
             this.txtJumlahBarangPenjualan.TabIndex = 57;
             this.txtJumlahBarangPenjualan.Text = "0";
             this.txtJumlahBarangPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtJumlahBarangPenjualan.TextChanged += new System.EventHandler(this.txtJumlahBarangPenjualan_TextChanged);
             // 
             // txtHargaBarangPenjualan
             // 
@@ -614,7 +619,9 @@
             this.txtHargaBarangPenjualan.Name = "txtHargaBarangPenjualan";
             this.txtHargaBarangPenjualan.Size = new System.Drawing.Size(151, 20);
             this.txtHargaBarangPenjualan.TabIndex = 54;
+            this.txtHargaBarangPenjualan.Text = "0";
             this.txtHargaBarangPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtHargaBarangPenjualan.TextChanged += new System.EventHandler(this.txtHargaBarangPenjualan_TextChanged);
             // 
             // txtSatuanBarangPenjualan
             // 
@@ -638,6 +645,7 @@
             this.txtKodeBarangPenjualan.Name = "txtKodeBarangPenjualan";
             this.txtKodeBarangPenjualan.Size = new System.Drawing.Size(207, 20);
             this.txtKodeBarangPenjualan.TabIndex = 50;
+            this.txtKodeBarangPenjualan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKodeBarangPenjualan_KeyDown);
             // 
             // button2
             // 
@@ -656,6 +664,7 @@
             this.bayarPenjualan.TabIndex = 45;
             this.bayarPenjualan.Text = "Bayar";
             this.bayarPenjualan.UseVisualStyleBackColor = true;
+            this.bayarPenjualan.Click += new System.EventHandler(this.bayarPenjualan_Click);
             // 
             // lblChange
             // 
@@ -667,17 +676,17 @@
             this.lblChange.TabIndex = 42;
             this.lblChange.Text = "Kembali";
             // 
-            // kembalianPenjualan
+            // txtKembalianPenjualan
             // 
-            this.kembalianPenjualan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.kembalianPenjualan.Enabled = false;
-            this.kembalianPenjualan.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kembalianPenjualan.ForeColor = System.Drawing.Color.Black;
-            this.kembalianPenjualan.Location = new System.Drawing.Point(1083, 466);
-            this.kembalianPenjualan.Name = "kembalianPenjualan";
-            this.kembalianPenjualan.Size = new System.Drawing.Size(263, 26);
-            this.kembalianPenjualan.TabIndex = 44;
-            this.kembalianPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtKembalianPenjualan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtKembalianPenjualan.Enabled = false;
+            this.txtKembalianPenjualan.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKembalianPenjualan.ForeColor = System.Drawing.Color.Black;
+            this.txtKembalianPenjualan.Location = new System.Drawing.Point(1083, 466);
+            this.txtKembalianPenjualan.Name = "txtKembalianPenjualan";
+            this.txtKembalianPenjualan.Size = new System.Drawing.Size(263, 26);
+            this.txtKembalianPenjualan.TabIndex = 44;
+            this.txtKembalianPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblPayment
             // 
@@ -689,28 +698,29 @@
             this.lblPayment.TabIndex = 40;
             this.lblPayment.Text = "Bayar";
             // 
-            // pembayaranPenjualan
+            // txtPembayaranPenjualan
             // 
-            this.pembayaranPenjualan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pembayaranPenjualan.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pembayaranPenjualan.ForeColor = System.Drawing.Color.Black;
-            this.pembayaranPenjualan.Location = new System.Drawing.Point(1083, 427);
-            this.pembayaranPenjualan.Name = "pembayaranPenjualan";
-            this.pembayaranPenjualan.Size = new System.Drawing.Size(262, 26);
-            this.pembayaranPenjualan.TabIndex = 43;
-            this.pembayaranPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.pembayaranPenjualan.TextChanged += new System.EventHandler(this.txtPay_TextChanged);
+            this.txtPembayaranPenjualan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtPembayaranPenjualan.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPembayaranPenjualan.ForeColor = System.Drawing.Color.Black;
+            this.txtPembayaranPenjualan.Location = new System.Drawing.Point(1083, 427);
+            this.txtPembayaranPenjualan.Name = "txtPembayaranPenjualan";
+            this.txtPembayaranPenjualan.Size = new System.Drawing.Size(262, 26);
+            this.txtPembayaranPenjualan.TabIndex = 43;
+            this.txtPembayaranPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPembayaranPenjualan.TextChanged += new System.EventHandler(this.txtPembayaranPenjualan_TextChanged);
             // 
             // txtTotalPenjualan
             // 
             this.txtTotalPenjualan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtTotalPenjualan.Enabled = false;
             this.txtTotalPenjualan.Font = new System.Drawing.Font("Trebuchet MS", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalPenjualan.ForeColor = System.Drawing.Color.White;
             this.txtTotalPenjualan.Location = new System.Drawing.Point(170, 427);
             this.txtTotalPenjualan.Name = "txtTotalPenjualan";
             this.txtTotalPenjualan.Size = new System.Drawing.Size(831, 57);
             this.txtTotalPenjualan.TabIndex = 35;
-            this.txtTotalPenjualan.Text = "5565";
+            this.txtTotalPenjualan.Text = "0";
             this.txtTotalPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tabPembelian
@@ -826,13 +836,14 @@
             // txtTotalPembelian
             // 
             this.txtTotalPembelian.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtTotalPembelian.Enabled = false;
             this.txtTotalPembelian.Font = new System.Drawing.Font("Trebuchet MS", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalPembelian.ForeColor = System.Drawing.Color.White;
             this.txtTotalPembelian.Location = new System.Drawing.Point(164, 422);
             this.txtTotalPembelian.Name = "txtTotalPembelian";
             this.txtTotalPembelian.Size = new System.Drawing.Size(831, 57);
             this.txtTotalPembelian.TabIndex = 104;
-            this.txtTotalPembelian.Text = "5565";
+            this.txtTotalPembelian.Text = "0";
             this.txtTotalPembelian.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dataGridViewPembelian
@@ -841,8 +852,8 @@
             this.dataGridViewPembelian.AllowUserToOrderColumns = true;
             this.dataGridViewPembelian.AllowUserToResizeColumns = false;
             this.dataGridViewPembelian.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridViewPembelian.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewPembelian.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewPembelian.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPembelian.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1189,8 +1200,8 @@
             this.dgMasterBarang.AllowUserToDeleteRows = false;
             this.dgMasterBarang.AllowUserToResizeColumns = false;
             this.dgMasterBarang.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgMasterBarang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgMasterBarang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgMasterBarang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgMasterBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMasterBarang.Location = new System.Drawing.Point(9, 14);
@@ -1767,9 +1778,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button bayarPenjualan;
         private System.Windows.Forms.Label lblChange;
-        private System.Windows.Forms.TextBox kembalianPenjualan;
+        private System.Windows.Forms.TextBox txtKembalianPenjualan;
         private System.Windows.Forms.Label lblPayment;
-        private System.Windows.Forms.TextBox pembayaranPenjualan;
+        private System.Windows.Forms.TextBox txtPembayaranPenjualan;
         private System.Windows.Forms.TextBox txtTotalPenjualan;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button deleteBarangPenjualan;

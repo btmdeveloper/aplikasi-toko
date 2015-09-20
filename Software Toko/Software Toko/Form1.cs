@@ -112,11 +112,6 @@ namespace Software_Toko
 
         }
 
-        private void txtPay_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAddPegawai_Click(object sender, EventArgs e)
         {
             Tambah_Pegawai formTambahPegawai = new Tambah_Pegawai(2);
@@ -215,7 +210,6 @@ namespace Software_Toko
                 {
                     MessageBox.Show("Silahkan daftarkan barang pada master barang terlebih dahulu");
                 }
-
             }
         }
 
@@ -228,14 +222,44 @@ namespace Software_Toko
             txtJumlahBarangPembelian.Text = "0";
             txtDiskonBarangPembelian.Text = "0";
 
+            txtPembayaranPembelian.Text = "0";
+            txtTotalPembelian.Text = "0";
+
             subTotalPembelian();
         }
 
         private void subTotalPembelian()
         {
-            double harga = Convert.ToDouble(txtHargaBarangPembelian.Text.ToString());
-            int jumlah = Convert.ToInt32(txtJumlahBarangPembelian.Text.ToString());
-            double diskon = Convert.ToDouble(txtDiskonBarangPembelian.Text.ToString());
+            double harga;
+            if (txtHargaBarangPembelian.Text.Equals(""))
+            {
+                harga = 0;
+            }
+            else
+            {
+                harga = Convert.ToDouble(txtHargaBarangPembelian.Text.ToString());
+            }
+
+            int jumlah;
+            if (txtJumlahBarangPembelian.Text.Equals(""))
+            {
+                jumlah = 0;
+            }
+            else
+            {
+                jumlah = Convert.ToInt32(txtJumlahBarangPembelian.Text.ToString());
+            }
+
+
+            double diskon;
+            if (txtDiskonBarangPembelian.Text.Equals(""))
+            {
+                diskon = 0;
+            }
+            else
+            {
+                diskon = Convert.ToDouble(txtDiskonBarangPembelian.Text.ToString());
+            }
 
             double total_harga = jumlah * harga;
             double total_diskon = (diskon / 100) * total_harga;
@@ -260,7 +284,7 @@ namespace Software_Toko
             subTotalPembelian();
         }
 
-        private void totalKeseluruhan()
+        private void totalKeseluruhanPembelian()
         {
             double totalPembelian = 0;
             for (int i = 0; i < dataGridViewPembelian.Rows.Count; ++i)
@@ -271,10 +295,19 @@ namespace Software_Toko
             txtTotalPembelian.Text = Convert.ToString(totalPembelian.ToString());
         }
 
-        private void totalKembalian()
+        private void totalKembalianPembelian()
         {
             double kembalian;
-            double total_bayar=Convert.ToDouble(txtPembayaranPembelian.Text.ToString());
+            double total_bayar;
+            
+            if (txtPembayaranPembelian.Text.Equals(""))
+            {
+                total_bayar = 0;
+            }
+            else
+            {
+                total_bayar = Convert.ToDouble(txtPembayaranPembelian.Text.ToString());
+            }
             double total_pembelian=Convert.ToDouble(txtTotalPembelian.Text.ToString());
             kembalian = total_bayar - total_pembelian;
 
@@ -283,7 +316,7 @@ namespace Software_Toko
 
         private void txtPembayaranPembelian_TextChanged(object sender, EventArgs e)
         {
-            totalKembalian();
+            totalKembalianPembelian();
         }
 
         private void addBarangPembelian_Click(object sender, EventArgs e)
@@ -343,7 +376,7 @@ namespace Software_Toko
 
             }
             resetPembelian();
-            totalKeseluruhan();
+            totalKeseluruhanPembelian();
             txtKodeBarangPembelian.Focus();
         }
 
@@ -358,7 +391,7 @@ namespace Software_Toko
             dataGridViewPembelian.SelectedRows[0].Cells[6].Value = txtSubTotalPembelian.Text.ToString();
 
             resetPembelian();
-            totalKeseluruhan();
+            totalKeseluruhanPembelian();
             txtKodeBarangPembelian.Focus();
         }
 
@@ -377,7 +410,7 @@ namespace Software_Toko
             }
 
             resetPembelian();
-            totalKeseluruhan();
+            totalKeseluruhanPembelian();
 
             addBarangPembelian.Enabled = true;
             deleteBarangPembelian.Enabled = false;
@@ -436,7 +469,7 @@ namespace Software_Toko
                 databaseCRUD.insertTbDetailPembelian(id_pembelian, id_barang, hrg_beli_awal, jmlBarangPembelian, diskon_barang, subTotal, stokAwal, Convert.ToInt32(stk.Rows[0][0].ToString()));
             }
             MessageBox.Show("Save Success");
-
+            resetPembelian();
             dataGridViewPembelian.Rows.Clear();
             dataGridViewPembelian.Refresh();
         }
@@ -458,6 +491,328 @@ namespace Software_Toko
                 updateBarangPembelian.Enabled = true;
 
                 txtKodeBarangPembelian.Focus();
+            }
+            else
+            {
+                MessageBox.Show("No Data");
+            }
+        }
+
+        private void txtKodeBarangPenjualan_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DataTable deskripsi = new DataTable();
+                string id = txtKodeBarangPenjualan.Text.ToString();
+                deskripsi = databaseCRUD.selectTbMasterBarang(id);
+                if (deskripsi.Rows.Count > 0)
+                {
+                    txtNamaBarangPenjualan.Text = Convert.ToString(deskripsi.Rows[0][1].ToString());
+                    txtSatuanBarangPenjualan.Text = Convert.ToString(deskripsi.Rows[0][2].ToString());
+                    txtHargaBarangPenjualan.Text = Convert.ToString(deskripsi.Rows[0][3].ToString());
+                    txtJumlahBarangPenjualan.Focus();
+                }
+                else if (id == "")
+                {
+                    MessageBox.Show("Silahkan isi kode barangnya");
+                }
+                else
+                {
+                    MessageBox.Show("Silahkan daftarkan barang pada master barang terlebih dahulu");
+                }
+            }
+        }
+
+        private void resetPenjualan()
+        {
+            txtKodeBarangPenjualan.Text = "";
+            txtNamaBarangPenjualan.Text = "";
+            txtSatuanBarangPenjualan.Text = "";
+            txtHargaBarangPenjualan.Text = "0";
+            txtJumlahBarangPenjualan.Text = "0";
+            txtDiskonBarangPenjualan.Text = "0";
+            txtTotalPenjualan.Text = "0";
+            txtPembayaranPenjualan.Text = "0";
+
+            subTotalPenjualan();
+        }
+
+        private void subTotalPenjualan()
+        {
+            double harga;
+            if (txtHargaBarangPenjualan.Text.Equals(""))
+            {
+                harga = 0;
+            }
+            else
+            {
+                harga = Convert.ToDouble(txtHargaBarangPenjualan.Text.ToString());
+            }
+            
+            int jumlah;
+            if (txtJumlahBarangPenjualan.Text.Equals(""))
+            {
+                jumlah = 0;
+            }
+            else
+            {
+                jumlah = Convert.ToInt32(txtJumlahBarangPenjualan.Text.ToString());
+            }
+            
+            
+            double diskon;
+            if (txtDiskonBarangPenjualan.Text.Equals(""))
+            {
+                diskon = 0;
+            }
+            else
+            {
+                diskon = Convert.ToDouble(txtDiskonBarangPenjualan.Text.ToString());
+            }
+
+            double total_harga = jumlah * harga;
+            double total_diskon = (diskon / 100) * total_harga;
+
+            double subtotal_penjualan = total_harga - total_diskon;
+            txtSubTotalPenjualan.Text = Convert.ToString(subtotal_penjualan.ToString());
+        }
+
+        private void txtHargaBarangPenjualan_TextChanged(object sender, EventArgs e)
+        {
+            subTotalPenjualan();
+        }
+
+        private void txtJumlahBarangPenjualan_TextChanged(object sender, EventArgs e)
+        {
+            subTotalPenjualan();
+        }
+
+        private void txtDiskonBarangPenjualan_TextChanged(object sender, EventArgs e)
+        {
+            subTotalPenjualan();
+        }
+
+        private void totalKeseluruhanPenjualan()
+        {
+            double totalPenjualan = 0;
+            for (int i = 0; i < dataGridViewPenjualan.Rows.Count; ++i)
+            {
+                totalPenjualan += Convert.ToDouble(dataGridViewPenjualan.Rows[i].Cells[6].Value);
+            }
+
+            txtTotalPenjualan.Text = Convert.ToString(totalPenjualan.ToString());
+        }
+
+        private void totalKembalianPenjualan()
+        {
+            double kembalian;
+            double total_bayar;
+            if (txtPembayaranPenjualan.Text.Equals(""))
+            {
+                total_bayar = 0;
+            }
+            else
+            {
+                total_bayar = Convert.ToDouble(txtPembayaranPenjualan.Text.ToString());
+            }
+            double total_penjualan = Convert.ToDouble(txtTotalPenjualan.Text.ToString());
+            kembalian = total_bayar - total_penjualan;
+
+            txtKembalianPenjualan.Text = Convert.ToString(kembalian.ToString());
+        }
+
+        private void txtPembayaranPenjualan_TextChanged(object sender, EventArgs e)
+        {
+            totalKembalianPenjualan();
+        }
+
+        private void addBarangPenjualan_Click(object sender, EventArgs e)
+        {
+            int status = 0;
+            if (dataGridViewPenjualan.Rows.Count > 1)
+            {
+                int j = (dataGridViewPenjualan.Rows.Count) - 2;
+                for (int i = 0; i <= j; i++)
+                {
+                    string id_barang = dataGridViewPenjualan.Rows[i].Cells[0].Value.ToString();
+                    double hrg_beli = Convert.ToDouble(dataGridViewPenjualan.Rows[i].Cells[3].Value.ToString());
+                    int stok = Convert.ToInt32(dataGridViewPenjualan.Rows[i].Cells[4].Value.ToString());
+                    double diskon2 = Convert.ToDouble(dataGridViewPenjualan.Rows[i].Cells[5].Value.ToString());
+                    double total2 = Convert.ToDouble(dataGridViewPenjualan.Rows[i].Cells[6].Value.ToString());
+
+                    if (id_barang == txtKodeBarangPenjualan.Text.ToString() && hrg_beli == double.Parse(txtHargaBarangPenjualan.Text.ToString()) && diskon2 == Convert.ToDouble(txtDiskonBarangPenjualan.Text.ToString()))
+                    {
+                        stok = stok + Convert.ToInt32(txtJumlahBarangPenjualan.Text.ToString());
+                        total2 = total2 + double.Parse(txtSubTotalPenjualan.Text.ToString()); // Convert.ToDouble(txtTotal.Text.ToString());
+
+                        dataGridViewPenjualan.Rows[i].Cells[4].Value = stok.ToString();
+                        dataGridViewPenjualan.Rows[i].Cells[6].Value = total2.ToString();
+                        status = 1;
+                        break;
+                    }
+                }
+
+                if (status == 0)
+                {
+                    MessageBox.Show("test 1");
+                    int n = dataGridViewPenjualan.Rows.Add();
+
+                    dataGridViewPenjualan.Rows[n].Cells[0].Value = txtKodeBarangPenjualan.Text.ToString();
+                    dataGridViewPenjualan.Rows[n].Cells[1].Value = txtNamaBarangPenjualan.Text.ToString();
+                    dataGridViewPenjualan.Rows[n].Cells[2].Value = txtSatuanBarangPenjualan.Text.ToString();
+                    dataGridViewPenjualan.Rows[n].Cells[3].Value = txtHargaBarangPenjualan.Text.ToString();
+                    dataGridViewPenjualan.Rows[n].Cells[4].Value = txtJumlahBarangPenjualan.Text.ToString();
+                    dataGridViewPenjualan.Rows[n].Cells[5].Value = txtDiskonBarangPenjualan.Text.ToString();
+                    dataGridViewPenjualan.Rows[n].Cells[6].Value = txtSubTotalPenjualan.Text.ToString();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("test2");
+                int n = dataGridViewPenjualan.Rows.Add();
+
+                dataGridViewPenjualan.Rows[n].Cells[0].Value = txtKodeBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.Rows[n].Cells[1].Value = txtNamaBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.Rows[n].Cells[2].Value = txtSatuanBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.Rows[n].Cells[3].Value = txtHargaBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.Rows[n].Cells[4].Value = txtJumlahBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.Rows[n].Cells[5].Value = txtDiskonBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.Rows[n].Cells[6].Value = txtSubTotalPenjualan.Text.ToString();
+
+            }
+            resetPenjualan();
+            totalKeseluruhanPenjualan();
+            txtKodeBarangPenjualan.Focus();
+        }
+
+        private void updateBarangPenjualan_Click(object sender, EventArgs e)
+        {
+            dataGridViewPenjualan.SelectedRows[0].Cells[0].Value = txtKodeBarangPenjualan.Text.ToString();
+            dataGridViewPenjualan.SelectedRows[0].Cells[1].Value = txtNamaBarangPenjualan.Text.ToString();
+            dataGridViewPenjualan.SelectedRows[0].Cells[2].Value = txtSatuanBarangPenjualan.Text.ToString();
+            dataGridViewPenjualan.SelectedRows[0].Cells[3].Value = txtHargaBarangPenjualan.Text.ToString();
+            dataGridViewPenjualan.SelectedRows[0].Cells[4].Value = txtJumlahBarangPenjualan.Text.ToString();
+            dataGridViewPenjualan.SelectedRows[0].Cells[5].Value = txtDiskonBarangPenjualan.Text.ToString();
+            dataGridViewPenjualan.SelectedRows[0].Cells[6].Value = txtSubTotalPenjualan.Text.ToString();
+
+            resetPenjualan();
+            totalKeseluruhanPenjualan();
+            txtKodeBarangPenjualan.Focus();
+        }
+
+        private void deleteBarangPenjualan_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Yakin menghapus barang ini?", "Peringatan", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            {
+                //MessageBox.Show("tidak jadi hapus data");
+            }
+            else
+            {
+                foreach (DataGridViewRow item in this.dataGridViewPenjualan.SelectedRows)
+                {
+                    dataGridViewPenjualan.Rows.RemoveAt(item.Index);
+                }
+            }
+
+            resetPenjualan();
+            totalKeseluruhanPenjualan();
+
+            addBarangPenjualan.Enabled = true;
+            deleteBarangPenjualan.Enabled = false;
+            updateBarangPenjualan.Enabled = false;
+
+            txtKodeBarangPenjualan.Focus();
+        }
+
+        private void bayarPenjualan_Click(object sender, EventArgs e)
+        {
+            string id_penjualan = txtFakturPenjualan.Text.ToString();
+            double totalpenjualan = Convert.ToDouble(txtTotalPenjualan.Text.ToString());
+            double totalbayar = Convert.ToDouble(txtPembayaranPenjualan.Text.ToString());
+            double kembali = Convert.ToDouble(txtKembalianPenjualan.Text.ToString());
+            string id_pegawai = lblIdUser.Text;
+
+            databaseCRUD.insertTbPenjualan(id_penjualan, totalpenjualan, totalbayar, kembali, id_pegawai);
+
+            int sisa;
+            int stok2, stok3;
+            int n = (dataGridViewPenjualan.Rows.Count) - 1;
+            int i = 0;
+            double harga_beli, total_beli;
+            do
+            {
+                string id_barang = dataGridViewPenjualan.Rows[i].Cells[0].Value.ToString();
+                string nama_barang = dataGridViewPenjualan.Rows[i].Cells[1].Value.ToString();
+                //string satuan = dataGridView1.Rows[i].Cells[2].Value.ToString();//GA PERLU UNIT DI DB
+                double harga_jual = double.Parse(dataGridViewPenjualan.Rows[i].Cells[3].Value.ToString());
+                int quantity = Convert.ToInt32(dataGridViewPenjualan.Rows[i].Cells[4].Value.ToString());
+                double diskon2 = Convert.ToDouble(dataGridViewPenjualan.Rows[i].Cells[5].Value.ToString());
+                double total2 = double.Parse(dataGridViewPenjualan.Rows[i].Cells[6].Value.ToString());
+
+                DataTable stok = new DataTable();
+                stok = databaseCRUD.selectDetailStok(id_barang);
+                n = 0;
+                //stok[i][0]=id_stok int
+                //stok[i][1]=stok_barang int
+                //stok[i][2]=harga_beli double
+                do
+                {
+                    stok2 = Convert.ToInt32(stok.Rows[n][1].ToString());
+                    harga_beli = Convert.ToDouble(stok.Rows[n][2].ToString());
+                    DataTable stk = new DataTable();
+                    stk = databaseCRUD.selectTotalStok(id_barang);
+                    stok3 = Convert.ToInt32(stk.Rows[0][0].ToString());
+
+                    sisa = quantity;
+                    quantity = quantity - stok2;
+                    if (quantity >= 0)
+                    {
+                        total_beli = stok2 * harga_beli;
+                        databaseCRUD.updateTbStok(0, Convert.ToInt32(stok.Rows[n][0].ToString()));
+                        stk = databaseCRUD.selectTotalStok(id_barang);
+
+                        databaseCRUD.insertTbDetailPenjualan(id_penjualan, id_barang, harga_jual, stok2, diskon2, ((harga_jual * stok2) - (diskon2 / 100) * (harga_jual * stok2)), harga_beli, total_beli, stok3, Convert.ToInt32(stk.Rows[0][0].ToString()));
+
+
+                    }
+                    else
+                    {
+                        total_beli = sisa * harga_beli;
+                        databaseCRUD.updateTbStok((stok2 - sisa), Convert.ToInt32(stok.Rows[n][0].ToString()));
+                        stk = databaseCRUD.selectTotalStok(id_barang);
+
+                        databaseCRUD.insertTbDetailPenjualan(id_penjualan, id_barang, harga_jual, sisa, diskon2, (harga_jual * sisa) - (diskon2 / 100) * (harga_jual * sisa), harga_beli, total_beli, stok3, Convert.ToInt32(stk.Rows[0][0].ToString()));
+                        break;
+                    }
+                    n++;
+                } while (quantity > 0);
+                i++;
+            } while (i <= (dataGridViewPenjualan.Rows.Count - 2));
+
+            MessageBox.Show("Save Success");
+            resetPenjualan();
+            dataGridViewPenjualan.Rows.Clear();
+            dataGridViewPenjualan.Refresh();
+        }
+
+        private void dataGridViewPenjualan_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (dataGridViewPenjualan.Rows.Count > 0)
+            {
+                txtKodeBarangPenjualan.Text = dataGridViewPenjualan.SelectedRows[0].Cells[0].Value.ToString();
+                txtNamaBarangPenjualan.Text = dataGridViewPenjualan.SelectedRows[0].Cells[1].Value.ToString();
+                txtSatuanBarangPenjualan.Text = dataGridViewPenjualan.SelectedRows[0].Cells[2].Value.ToString();
+                txtHargaBarangPenjualan.Text = dataGridViewPenjualan.SelectedRows[0].Cells[3].Value.ToString();
+                txtJumlahBarangPenjualan.Text = dataGridViewPenjualan.SelectedRows[0].Cells[4].Value.ToString();
+                txtDiskonBarangPenjualan.Text = dataGridViewPenjualan.SelectedRows[0].Cells[5].Value.ToString();
+                //txtTotal.Text = string.Format(System.Globalization.CultureInfo.GetCultureInfo("id-ID"), "{0:#,##0.00}", int.Parse(dataGridViewPenjualan.SelectedRows[0].Cells[6].Value.ToString()));
+
+                addBarangPenjualan.Enabled = false;
+                deleteBarangPenjualan.Enabled = true;
+                updateBarangPenjualan.Enabled = true;
+
+                txtKodeBarangPenjualan.Focus();
             }
             else
             {
