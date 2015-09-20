@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace Software_Toko
 {
@@ -14,6 +15,10 @@ namespace Software_Toko
     {
         Database databaseCRUD;
         DataTable dtPegawai, dtUser, dtMasterBarang;
+        DataTable dt = new DataTable();
+
+        int w = 0;
+        public int h;
 
         public Form1()
         {
@@ -790,6 +795,17 @@ namespace Software_Toko
                 i++;
             } while (i <= (dataGridViewPenjualan.Rows.Count - 2));
 
+            ///////////--PERINT
+            dt = databaseCRUD.rePrint(txtFakturPenjualan.Text.ToString());
+            int jum = dt.Rows.Count;
+            int w = 220 + (25 * (jum + 1));
+            //PaperSize ps = new PaperSize("Custom", 300, h); // ne wa paling ar, enken carane parsing nilai H ne to, nyanan h ne to kal dadi dinamic ukuran kertasne
+            PaperSize ps = new PaperSize("Custom", 300, w);
+            printDocument1.DefaultPageSettings.PaperSize = ps;
+
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
+
             MessageBox.Show("Save Success");
             resetPenjualan();
             dataGridViewPenjualan.Rows.Clear();
@@ -818,6 +834,73 @@ namespace Software_Toko
             {
                 MessageBox.Show("No Data");
             }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            h = 95;
+
+            dt = databaseCRUD.rePrint(txtFakturPenjualan.Text.ToString());
+            int jum = dt.Rows.Count;
+
+            e.Graphics.DrawString("Bali Tunjung Media", new Font("Courier New", 8), Brushes.Black, new Point(80, 15));
+            e.Graphics.DrawString("Jl Sunset Road 333, Seminyak, Badung-Bali", new Font("Courier New", 8), Brushes.Black, new Point(10, 25));
+            e.Graphics.DrawString(" Telp : (0361) 8887026", new Font("Courier New", 8), Brushes.Black, new Point(73, 35));
+
+            e.Graphics.DrawString("ID Bill  : " + dt.Rows[0][0].ToString(), new Font("Courier New", 8, FontStyle.Regular), Brushes.Black, new Point(10, 60)); //(10,100) 25 kirikanan, 100 atas bawwah
+            e.Graphics.DrawString("Employee : " + dt.Rows[0][10].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(10, 70));
+            e.Graphics.DrawString("Date     : " + DateTime.Now, new Font("Courier New", 8), Brushes.Black, new Point(10, 80));
+
+            //// Draw line to screen.
+            //e.Graphics.DrawLine(blackPen, point1, point2);
+            Pen myPen = new Pen(Color.Black, 1.0F);
+            myPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+
+            // Create points that define line.
+            Point point1 = new Point(10, 95);
+            Point point2 = new Point(290, 95);
+
+            // Draw line to screen.
+            e.Graphics.DrawLine(myPen, point1, point2);
+
+            for (int i = 0; i < jum; i++)
+            {
+                h = h + 10;
+                //Group
+                e.Graphics.DrawString(dt.Rows[i][2].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(10, h));
+
+                h = h + 10;
+                //Detail
+                e.Graphics.DrawString(dt.Rows[i][1].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(10, h));
+                e.Graphics.DrawString(dt.Rows[i][3].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(65, h));
+                e.Graphics.DrawString(dt.Rows[i][4].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(115, h));
+                e.Graphics.DrawString(dt.Rows[i][5].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(165, h));
+                e.Graphics.DrawString(dt.Rows[i][6].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(215, h));
+            }
+
+            h = h + 20;
+            //return
+            e.Graphics.DrawString("Total  :", new Font("Courier New", 8), Brushes.Black, new Point(150, h));
+            e.Graphics.DrawString(dt.Rows[0][7].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(215, h));
+
+            h = h + 10;
+            e.Graphics.DrawString("Pay    :", new Font("Courier New", 8), Brushes.Black, new Point(150, h));
+            e.Graphics.DrawString(dt.Rows[0][8].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(215, h));
+
+            h = h + 10;
+            e.Graphics.DrawString("Change :", new Font("Courier New", 8), Brushes.Black, new Point(150, h));
+            e.Graphics.DrawString(dt.Rows[0][9].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(215, h));
+
+
+            //detail pembeli/member
+            h = h + 20;
+
+
+            //Footer
+            h = h + 30;
+            e.Graphics.DrawString(" Terima Kasih", new Font("Courier New", 8), Brushes.Black, new Point(83, h));
+
+            this.w = h;
         }
     }
 }

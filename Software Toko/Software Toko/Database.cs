@@ -497,5 +497,35 @@ namespace Software_Toko
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        public DataTable rePrint(string bill)
+        {
+            con = new MySqlConnection(konf);
+            MySqlCommand query;
+            con.Open();
+            dt = new DataTable();
+            try
+            {
+
+                query = new MySqlCommand();
+                query.Connection = con;
+                //query.CommandText = "select * from '" + tabel + "'";
+                query.CommandText = "SELECT * FROM(SELECT tdp.no_faktur, tdp.id_barang, tmb.nama_barang, SUM(tdp.jumlah_barang) AS sum_jml, tdp.harga_jual,diskon,SUM(total_jual) AS sum_totalJual, tp.total_penjualan, tp.total_bayar,tp.kembali,tp.id_pegawai " +
+                "FROM tb_detail_penjualan tdp INNER JOIN tb_master_barang tmb ON tdp.id_barang=tmb.id_barang " +
+                "INNER JOIN tb_penjualan tp ON tdp.no_faktur=tp.no_faktur " +
+                "GROUP BY tmb.id_barang, tdp.no_faktur " +
+                "HAVING tdp.no_faktur='" + bill + "') AS tabel_struk";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query);
+                adapter.Fill(dt);
+                con.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return dt;
+            }
+        }
     }
 }
