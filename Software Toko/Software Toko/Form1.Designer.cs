@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -60,13 +60,11 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFakturPenjualan = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmdDelete = new System.Windows.Forms.Button();
-            this.cmdUpdate = new System.Windows.Forms.Button();
-            this.cmdAdd = new System.Windows.Forms.Button();
+            this.deleteBarangPenjualan = new System.Windows.Forms.Button();
+            this.updateBarangPenjualan = new System.Windows.Forms.Button();
+            this.addBarangPenjualan = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -74,30 +72,30 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
-            this.txtQty = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtUnit = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtSubTotalPenjualan = new System.Windows.Forms.TextBox();
+            this.txtDiskonBarangPenjualan = new System.Windows.Forms.TextBox();
+            this.txtJumlahBarangPenjualan = new System.Windows.Forms.TextBox();
+            this.txtHargaBarangPenjualan = new System.Windows.Forms.TextBox();
+            this.txtSatuanBarangPenjualan = new System.Windows.Forms.TextBox();
+            this.txtNamaBarangPenjualan = new System.Windows.Forms.TextBox();
+            this.txtKodeBarangPenjualan = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.bayarPenjualan = new System.Windows.Forms.Button();
             this.lblChange = new System.Windows.Forms.Label();
-            this.txtChange = new System.Windows.Forms.TextBox();
+            this.kembalianPenjualan = new System.Windows.Forms.TextBox();
             this.lblPayment = new System.Windows.Forms.Label();
-            this.txtPay = new System.Windows.Forms.TextBox();
-            this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.pembayaranPenjualan = new System.Windows.Forms.TextBox();
+            this.txtTotalPenjualan = new System.Windows.Forms.TextBox();
             this.tabPembelian = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.bayarPembelian = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtKembalianPembelian = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtPembayaranPembelian = new System.Windows.Forms.TextBox();
+            this.txtTotalPembelian = new System.Windows.Forms.TextBox();
+            this.dataGridViewPembelian = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,9 +103,9 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.deleteBarangPembelian = new System.Windows.Forms.Button();
+            this.updateBarangPembelian = new System.Windows.Forms.Button();
+            this.addBarangPembelian = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -115,18 +113,16 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtSubTotalPembelian = new System.Windows.Forms.TextBox();
+            this.txtDiskonBarangPembelian = new System.Windows.Forms.TextBox();
+            this.txtJumlahBarangPembelian = new System.Windows.Forms.TextBox();
+            this.txtHargaBarangPembelian = new System.Windows.Forms.TextBox();
+            this.txtSatuanBarangPembelian = new System.Windows.Forms.TextBox();
+            this.txtNamaBarangPembelian = new System.Windows.Forms.TextBox();
+            this.txtKodeBarangPembelian = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtFakturPembelian = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabMaster = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
@@ -138,11 +134,9 @@
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.dgMasterBarang = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtSatuan = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.txtHargaBeli = new System.Windows.Forms.TextBox();
+            this.txtHargaJual = new System.Windows.Forms.TextBox();
             this.txtNamaBarang = new System.Windows.Forms.TextBox();
             this.txtIdBarang = new System.Windows.Forms.TextBox();
             this.lblHargaBeli = new System.Windows.Forms.Label();
@@ -183,18 +177,18 @@
             this.btnUbahPassword = new System.Windows.Forms.Button();
             this.lblIdUser = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabKasir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPenjualan)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPembelian.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPembelian)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabMaster.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -210,8 +204,8 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgPegawai)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -340,9 +334,9 @@
             this.tabKasir.Controls.Add(this.label35);
             this.tabKasir.Controls.Add(this.dataGridViewPenjualan);
             this.tabKasir.Controls.Add(this.groupBox1);
-            this.tabKasir.Controls.Add(this.cmdDelete);
-            this.tabKasir.Controls.Add(this.cmdUpdate);
-            this.tabKasir.Controls.Add(this.cmdAdd);
+            this.tabKasir.Controls.Add(this.deleteBarangPenjualan);
+            this.tabKasir.Controls.Add(this.updateBarangPenjualan);
+            this.tabKasir.Controls.Add(this.addBarangPenjualan);
             this.tabKasir.Controls.Add(this.label9);
             this.tabKasir.Controls.Add(this.label8);
             this.tabKasir.Controls.Add(this.label7);
@@ -350,20 +344,20 @@
             this.tabKasir.Controls.Add(this.label5);
             this.tabKasir.Controls.Add(this.label10);
             this.tabKasir.Controls.Add(this.label11);
-            this.tabKasir.Controls.Add(this.txtTotal);
-            this.tabKasir.Controls.Add(this.txtDiscount);
-            this.tabKasir.Controls.Add(this.txtQty);
-            this.tabKasir.Controls.Add(this.txtPrice);
-            this.tabKasir.Controls.Add(this.txtUnit);
-            this.tabKasir.Controls.Add(this.txtName);
-            this.tabKasir.Controls.Add(this.txtId);
+            this.tabKasir.Controls.Add(this.txtSubTotalPenjualan);
+            this.tabKasir.Controls.Add(this.txtDiskonBarangPenjualan);
+            this.tabKasir.Controls.Add(this.txtJumlahBarangPenjualan);
+            this.tabKasir.Controls.Add(this.txtHargaBarangPenjualan);
+            this.tabKasir.Controls.Add(this.txtSatuanBarangPenjualan);
+            this.tabKasir.Controls.Add(this.txtNamaBarangPenjualan);
+            this.tabKasir.Controls.Add(this.txtKodeBarangPenjualan);
             this.tabKasir.Controls.Add(this.button2);
-            this.tabKasir.Controls.Add(this.button5);
+            this.tabKasir.Controls.Add(this.bayarPenjualan);
             this.tabKasir.Controls.Add(this.lblChange);
-            this.tabKasir.Controls.Add(this.txtChange);
+            this.tabKasir.Controls.Add(this.kembalianPenjualan);
             this.tabKasir.Controls.Add(this.lblPayment);
-            this.tabKasir.Controls.Add(this.txtPay);
-            this.tabKasir.Controls.Add(this.txtTotalPrice);
+            this.tabKasir.Controls.Add(this.pembayaranPenjualan);
+            this.tabKasir.Controls.Add(this.txtTotalPenjualan);
             this.tabKasir.ImageIndex = 6;
             this.tabKasir.Location = new System.Drawing.Point(4, 64);
             this.tabKasir.Margin = new System.Windows.Forms.Padding(5);
@@ -399,8 +393,8 @@
             this.dataGridViewPenjualan.AllowUserToOrderColumns = true;
             this.dataGridViewPenjualan.AllowUserToResizeColumns = false;
             this.dataGridViewPenjualan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridViewPenjualan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewPenjualan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewPenjualan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPenjualan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -461,9 +455,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label29);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtFakturPenjualan);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(8, 7);
             this.groupBox1.Name = "groupBox1";
@@ -481,66 +473,49 @@
             this.label29.TabIndex = 4;
             this.label29.Text = "Transaksi Penjualan";
             // 
-            // textBox1
+            // txtFakturPenjualan
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tanggal";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(91, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 20);
-            this.textBox2.TabIndex = 2;
+            this.txtFakturPenjualan.Location = new System.Drawing.Point(98, 27);
+            this.txtFakturPenjualan.Name = "txtFakturPenjualan";
+            this.txtFakturPenjualan.Size = new System.Drawing.Size(140, 20);
+            this.txtFakturPenjualan.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 54);
+            this.label2.Location = new System.Drawing.Point(23, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "No. Faktur";
             // 
-            // cmdDelete
+            // deleteBarangPenjualan
             // 
-            this.cmdDelete.Location = new System.Drawing.Point(1328, 105);
-            this.cmdDelete.Name = "cmdDelete";
-            this.cmdDelete.Size = new System.Drawing.Size(25, 20);
-            this.cmdDelete.TabIndex = 66;
-            this.cmdDelete.Text = "-";
-            this.cmdDelete.UseVisualStyleBackColor = true;
+            this.deleteBarangPenjualan.Location = new System.Drawing.Point(1328, 105);
+            this.deleteBarangPenjualan.Name = "deleteBarangPenjualan";
+            this.deleteBarangPenjualan.Size = new System.Drawing.Size(25, 20);
+            this.deleteBarangPenjualan.TabIndex = 66;
+            this.deleteBarangPenjualan.Text = "-";
+            this.deleteBarangPenjualan.UseVisualStyleBackColor = true;
             // 
-            // cmdUpdate
+            // updateBarangPenjualan
             // 
-            this.cmdUpdate.Location = new System.Drawing.Point(1303, 105);
-            this.cmdUpdate.Name = "cmdUpdate";
-            this.cmdUpdate.Size = new System.Drawing.Size(25, 20);
-            this.cmdUpdate.TabIndex = 65;
-            this.cmdUpdate.Text = "u";
-            this.cmdUpdate.UseVisualStyleBackColor = true;
+            this.updateBarangPenjualan.Location = new System.Drawing.Point(1303, 105);
+            this.updateBarangPenjualan.Name = "updateBarangPenjualan";
+            this.updateBarangPenjualan.Size = new System.Drawing.Size(25, 20);
+            this.updateBarangPenjualan.TabIndex = 65;
+            this.updateBarangPenjualan.Text = "u";
+            this.updateBarangPenjualan.UseVisualStyleBackColor = true;
             // 
-            // cmdAdd
+            // addBarangPenjualan
             // 
-            this.cmdAdd.Location = new System.Drawing.Point(1279, 105);
-            this.cmdAdd.Name = "cmdAdd";
-            this.cmdAdd.Size = new System.Drawing.Size(25, 20);
-            this.cmdAdd.TabIndex = 63;
-            this.cmdAdd.Text = "+";
-            this.cmdAdd.UseVisualStyleBackColor = true;
+            this.addBarangPenjualan.Location = new System.Drawing.Point(1279, 105);
+            this.addBarangPenjualan.Name = "addBarangPenjualan";
+            this.addBarangPenjualan.Size = new System.Drawing.Size(25, 20);
+            this.addBarangPenjualan.TabIndex = 63;
+            this.addBarangPenjualan.Text = "+";
+            this.addBarangPenjualan.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -605,64 +580,64 @@
             this.label11.TabIndex = 53;
             this.label11.Text = "Kode Barang";
             // 
-            // txtTotal
+            // txtSubTotalPenjualan
             // 
-            this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(1123, 105);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(147, 20);
-            this.txtTotal.TabIndex = 60;
-            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSubTotalPenjualan.Enabled = false;
+            this.txtSubTotalPenjualan.Location = new System.Drawing.Point(1123, 105);
+            this.txtSubTotalPenjualan.Name = "txtSubTotalPenjualan";
+            this.txtSubTotalPenjualan.Size = new System.Drawing.Size(147, 20);
+            this.txtSubTotalPenjualan.TabIndex = 60;
+            this.txtSubTotalPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtDiscount
+            // txtDiskonBarangPenjualan
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(1032, 106);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(85, 20);
-            this.txtDiscount.TabIndex = 59;
-            this.txtDiscount.Text = "0";
-            this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDiskonBarangPenjualan.Location = new System.Drawing.Point(1032, 106);
+            this.txtDiskonBarangPenjualan.Name = "txtDiskonBarangPenjualan";
+            this.txtDiskonBarangPenjualan.Size = new System.Drawing.Size(85, 20);
+            this.txtDiskonBarangPenjualan.TabIndex = 59;
+            this.txtDiskonBarangPenjualan.Text = "0";
+            this.txtDiskonBarangPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtQty
+            // txtJumlahBarangPenjualan
             // 
-            this.txtQty.Location = new System.Drawing.Point(912, 106);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(114, 20);
-            this.txtQty.TabIndex = 57;
-            this.txtQty.Text = "0";
-            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtJumlahBarangPenjualan.Location = new System.Drawing.Point(912, 106);
+            this.txtJumlahBarangPenjualan.Name = "txtJumlahBarangPenjualan";
+            this.txtJumlahBarangPenjualan.Size = new System.Drawing.Size(114, 20);
+            this.txtJumlahBarangPenjualan.TabIndex = 57;
+            this.txtJumlahBarangPenjualan.Text = "0";
+            this.txtJumlahBarangPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtPrice
+            // txtHargaBarangPenjualan
             // 
-            this.txtPrice.Enabled = false;
-            this.txtPrice.Location = new System.Drawing.Point(755, 105);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(151, 20);
-            this.txtPrice.TabIndex = 54;
-            this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtHargaBarangPenjualan.Enabled = false;
+            this.txtHargaBarangPenjualan.Location = new System.Drawing.Point(755, 105);
+            this.txtHargaBarangPenjualan.Name = "txtHargaBarangPenjualan";
+            this.txtHargaBarangPenjualan.Size = new System.Drawing.Size(151, 20);
+            this.txtHargaBarangPenjualan.TabIndex = 54;
+            this.txtHargaBarangPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtUnit
+            // txtSatuanBarangPenjualan
             // 
-            this.txtUnit.Enabled = false;
-            this.txtUnit.Location = new System.Drawing.Point(622, 106);
-            this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(127, 20);
-            this.txtUnit.TabIndex = 52;
+            this.txtSatuanBarangPenjualan.Enabled = false;
+            this.txtSatuanBarangPenjualan.Location = new System.Drawing.Point(622, 106);
+            this.txtSatuanBarangPenjualan.Name = "txtSatuanBarangPenjualan";
+            this.txtSatuanBarangPenjualan.Size = new System.Drawing.Size(127, 20);
+            this.txtSatuanBarangPenjualan.TabIndex = 52;
             // 
-            // txtName
+            // txtNamaBarangPenjualan
             // 
-            this.txtName.Enabled = false;
-            this.txtName.Location = new System.Drawing.Point(220, 106);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(396, 20);
-            this.txtName.TabIndex = 51;
+            this.txtNamaBarangPenjualan.Enabled = false;
+            this.txtNamaBarangPenjualan.Location = new System.Drawing.Point(220, 106);
+            this.txtNamaBarangPenjualan.Name = "txtNamaBarangPenjualan";
+            this.txtNamaBarangPenjualan.Size = new System.Drawing.Size(396, 20);
+            this.txtNamaBarangPenjualan.TabIndex = 51;
             // 
-            // txtId
+            // txtKodeBarangPenjualan
             // 
-            this.txtId.Location = new System.Drawing.Point(7, 106);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(207, 20);
-            this.txtId.TabIndex = 50;
+            this.txtKodeBarangPenjualan.Location = new System.Drawing.Point(7, 106);
+            this.txtKodeBarangPenjualan.Name = "txtKodeBarangPenjualan";
+            this.txtKodeBarangPenjualan.Size = new System.Drawing.Size(207, 20);
+            this.txtKodeBarangPenjualan.TabIndex = 50;
             // 
             // button2
             // 
@@ -673,14 +648,14 @@
             this.button2.Text = "Cetak Ulang Faktur";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // bayarPenjualan
             // 
-            this.button5.Location = new System.Drawing.Point(1181, 506);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(164, 33);
-            this.button5.TabIndex = 45;
-            this.button5.Text = "Bayar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.bayarPenjualan.Location = new System.Drawing.Point(1181, 506);
+            this.bayarPenjualan.Name = "bayarPenjualan";
+            this.bayarPenjualan.Size = new System.Drawing.Size(164, 33);
+            this.bayarPenjualan.TabIndex = 45;
+            this.bayarPenjualan.Text = "Bayar";
+            this.bayarPenjualan.UseVisualStyleBackColor = true;
             // 
             // lblChange
             // 
@@ -692,17 +667,17 @@
             this.lblChange.TabIndex = 42;
             this.lblChange.Text = "Kembali";
             // 
-            // txtChange
+            // kembalianPenjualan
             // 
-            this.txtChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtChange.Enabled = false;
-            this.txtChange.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChange.ForeColor = System.Drawing.Color.Black;
-            this.txtChange.Location = new System.Drawing.Point(1083, 466);
-            this.txtChange.Name = "txtChange";
-            this.txtChange.Size = new System.Drawing.Size(263, 26);
-            this.txtChange.TabIndex = 44;
-            this.txtChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.kembalianPenjualan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.kembalianPenjualan.Enabled = false;
+            this.kembalianPenjualan.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kembalianPenjualan.ForeColor = System.Drawing.Color.Black;
+            this.kembalianPenjualan.Location = new System.Drawing.Point(1083, 466);
+            this.kembalianPenjualan.Name = "kembalianPenjualan";
+            this.kembalianPenjualan.Size = new System.Drawing.Size(263, 26);
+            this.kembalianPenjualan.TabIndex = 44;
+            this.kembalianPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblPayment
             // 
@@ -714,45 +689,45 @@
             this.lblPayment.TabIndex = 40;
             this.lblPayment.Text = "Bayar";
             // 
-            // txtPay
+            // pembayaranPenjualan
             // 
-            this.txtPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtPay.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPay.ForeColor = System.Drawing.Color.Black;
-            this.txtPay.Location = new System.Drawing.Point(1083, 427);
-            this.txtPay.Name = "txtPay";
-            this.txtPay.Size = new System.Drawing.Size(262, 26);
-            this.txtPay.TabIndex = 43;
-            this.txtPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPay.TextChanged += new System.EventHandler(this.txtPay_TextChanged);
+            this.pembayaranPenjualan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pembayaranPenjualan.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pembayaranPenjualan.ForeColor = System.Drawing.Color.Black;
+            this.pembayaranPenjualan.Location = new System.Drawing.Point(1083, 427);
+            this.pembayaranPenjualan.Name = "pembayaranPenjualan";
+            this.pembayaranPenjualan.Size = new System.Drawing.Size(262, 26);
+            this.pembayaranPenjualan.TabIndex = 43;
+            this.pembayaranPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.pembayaranPenjualan.TextChanged += new System.EventHandler(this.txtPay_TextChanged);
             // 
-            // txtTotalPrice
+            // txtTotalPenjualan
             // 
-            this.txtTotalPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtTotalPrice.Font = new System.Drawing.Font("Trebuchet MS", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPrice.ForeColor = System.Drawing.Color.White;
-            this.txtTotalPrice.Location = new System.Drawing.Point(170, 427);
-            this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(831, 57);
-            this.txtTotalPrice.TabIndex = 35;
-            this.txtTotalPrice.Text = "5565";
-            this.txtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotalPenjualan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtTotalPenjualan.Font = new System.Drawing.Font("Trebuchet MS", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalPenjualan.ForeColor = System.Drawing.Color.White;
+            this.txtTotalPenjualan.Location = new System.Drawing.Point(170, 427);
+            this.txtTotalPenjualan.Name = "txtTotalPenjualan";
+            this.txtTotalPenjualan.Size = new System.Drawing.Size(831, 57);
+            this.txtTotalPenjualan.TabIndex = 35;
+            this.txtTotalPenjualan.Text = "5565";
+            this.txtTotalPenjualan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tabPembelian
             // 
             this.tabPembelian.BackColor = System.Drawing.Color.White;
             this.tabPembelian.Controls.Add(this.label21);
             this.tabPembelian.Controls.Add(this.button7);
-            this.tabPembelian.Controls.Add(this.button8);
+            this.tabPembelian.Controls.Add(this.bayarPembelian);
             this.tabPembelian.Controls.Add(this.label22);
-            this.tabPembelian.Controls.Add(this.textBox12);
+            this.tabPembelian.Controls.Add(this.txtKembalianPembelian);
             this.tabPembelian.Controls.Add(this.label23);
-            this.tabPembelian.Controls.Add(this.textBox13);
-            this.tabPembelian.Controls.Add(this.textBox14);
-            this.tabPembelian.Controls.Add(this.dataGridView1);
-            this.tabPembelian.Controls.Add(this.button3);
-            this.tabPembelian.Controls.Add(this.button4);
-            this.tabPembelian.Controls.Add(this.button6);
+            this.tabPembelian.Controls.Add(this.txtPembayaranPembelian);
+            this.tabPembelian.Controls.Add(this.txtTotalPembelian);
+            this.tabPembelian.Controls.Add(this.dataGridViewPembelian);
+            this.tabPembelian.Controls.Add(this.deleteBarangPembelian);
+            this.tabPembelian.Controls.Add(this.updateBarangPembelian);
+            this.tabPembelian.Controls.Add(this.addBarangPembelian);
             this.tabPembelian.Controls.Add(this.label14);
             this.tabPembelian.Controls.Add(this.label15);
             this.tabPembelian.Controls.Add(this.label16);
@@ -760,13 +735,13 @@
             this.tabPembelian.Controls.Add(this.label18);
             this.tabPembelian.Controls.Add(this.label19);
             this.tabPembelian.Controls.Add(this.label20);
-            this.tabPembelian.Controls.Add(this.textBox5);
-            this.tabPembelian.Controls.Add(this.textBox6);
-            this.tabPembelian.Controls.Add(this.textBox7);
-            this.tabPembelian.Controls.Add(this.textBox8);
-            this.tabPembelian.Controls.Add(this.textBox9);
-            this.tabPembelian.Controls.Add(this.textBox10);
-            this.tabPembelian.Controls.Add(this.textBox11);
+            this.tabPembelian.Controls.Add(this.txtSubTotalPembelian);
+            this.tabPembelian.Controls.Add(this.txtDiskonBarangPembelian);
+            this.tabPembelian.Controls.Add(this.txtJumlahBarangPembelian);
+            this.tabPembelian.Controls.Add(this.txtHargaBarangPembelian);
+            this.tabPembelian.Controls.Add(this.txtSatuanBarangPembelian);
+            this.tabPembelian.Controls.Add(this.txtNamaBarangPembelian);
+            this.tabPembelian.Controls.Add(this.txtKodeBarangPembelian);
             this.tabPembelian.Controls.Add(this.groupBox2);
             this.tabPembelian.ImageIndex = 7;
             this.tabPembelian.Location = new System.Drawing.Point(4, 64);
@@ -794,14 +769,15 @@
             this.button7.Text = "Cetak Ulang Faktur";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // bayarPembelian
             // 
-            this.button8.Location = new System.Drawing.Point(1175, 501);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(164, 33);
-            this.button8.TabIndex = 109;
-            this.button8.Text = "Bayar";
-            this.button8.UseVisualStyleBackColor = true;
+            this.bayarPembelian.Location = new System.Drawing.Point(1175, 501);
+            this.bayarPembelian.Name = "bayarPembelian";
+            this.bayarPembelian.Size = new System.Drawing.Size(164, 33);
+            this.bayarPembelian.TabIndex = 109;
+            this.bayarPembelian.Text = "Bayar";
+            this.bayarPembelian.UseVisualStyleBackColor = true;
+            this.bayarPembelian.Click += new System.EventHandler(this.bayarPembelian_Click);
             // 
             // label22
             // 
@@ -813,17 +789,17 @@
             this.label22.TabIndex = 106;
             this.label22.Text = "Kembali";
             // 
-            // textBox12
+            // txtKembalianPembelian
             // 
-            this.textBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBox12.Enabled = false;
-            this.textBox12.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.ForeColor = System.Drawing.Color.Black;
-            this.textBox12.Location = new System.Drawing.Point(1077, 461);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(263, 26);
-            this.textBox12.TabIndex = 108;
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtKembalianPembelian.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtKembalianPembelian.Enabled = false;
+            this.txtKembalianPembelian.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKembalianPembelian.ForeColor = System.Drawing.Color.Black;
+            this.txtKembalianPembelian.Location = new System.Drawing.Point(1077, 461);
+            this.txtKembalianPembelian.Name = "txtKembalianPembelian";
+            this.txtKembalianPembelian.Size = new System.Drawing.Size(263, 26);
+            this.txtKembalianPembelian.TabIndex = 108;
+            this.txtKembalianPembelian.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label23
             // 
@@ -835,40 +811,40 @@
             this.label23.TabIndex = 105;
             this.label23.Text = "Bayar";
             // 
-            // textBox13
+            // txtPembayaranPembelian
             // 
-            this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBox13.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.ForeColor = System.Drawing.Color.Black;
-            this.textBox13.Location = new System.Drawing.Point(1077, 422);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(262, 26);
-            this.textBox13.TabIndex = 107;
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPembayaranPembelian.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtPembayaranPembelian.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPembayaranPembelian.ForeColor = System.Drawing.Color.Black;
+            this.txtPembayaranPembelian.Location = new System.Drawing.Point(1077, 422);
+            this.txtPembayaranPembelian.Name = "txtPembayaranPembelian";
+            this.txtPembayaranPembelian.Size = new System.Drawing.Size(262, 26);
+            this.txtPembayaranPembelian.TabIndex = 107;
+            this.txtPembayaranPembelian.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPembayaranPembelian.TextChanged += new System.EventHandler(this.txtPembayaranPembelian_TextChanged);
             // 
-            // textBox14
+            // txtTotalPembelian
             // 
-            this.textBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.textBox14.Font = new System.Drawing.Font("Trebuchet MS", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.ForeColor = System.Drawing.Color.White;
-            this.textBox14.Location = new System.Drawing.Point(164, 422);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(831, 57);
-            this.textBox14.TabIndex = 104;
-            this.textBox14.Text = "5565";
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotalPembelian.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtTotalPembelian.Font = new System.Drawing.Font("Trebuchet MS", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalPembelian.ForeColor = System.Drawing.Color.White;
+            this.txtTotalPembelian.Location = new System.Drawing.Point(164, 422);
+            this.txtTotalPembelian.Name = "txtTotalPembelian";
+            this.txtTotalPembelian.Size = new System.Drawing.Size(831, 57);
+            this.txtTotalPembelian.TabIndex = 104;
+            this.txtTotalPembelian.Text = "5565";
+            this.txtTotalPembelian.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // dataGridView1
+            // dataGridViewPembelian
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewPembelian.AllowUserToDeleteRows = false;
+            this.dataGridViewPembelian.AllowUserToOrderColumns = true;
+            this.dataGridViewPembelian.AllowUserToResizeColumns = false;
+            this.dataGridViewPembelian.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewPembelian.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewPembelian.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPembelian.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -876,11 +852,12 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 131);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1337, 232);
-            this.dataGridView1.TabIndex = 103;
+            this.dataGridViewPembelian.Location = new System.Drawing.Point(8, 131);
+            this.dataGridViewPembelian.Name = "dataGridViewPembelian";
+            this.dataGridViewPembelian.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewPembelian.Size = new System.Drawing.Size(1337, 232);
+            this.dataGridViewPembelian.TabIndex = 103;
+            this.dataGridViewPembelian.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewPembelian_MouseClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -923,32 +900,37 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 200;
             // 
-            // button3
+            // deleteBarangPembelian
             // 
-            this.button3.Location = new System.Drawing.Point(1323, 100);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 20);
-            this.button3.TabIndex = 85;
-            this.button3.Text = "-";
-            this.button3.UseVisualStyleBackColor = true;
+            this.deleteBarangPembelian.Enabled = false;
+            this.deleteBarangPembelian.Location = new System.Drawing.Point(1323, 100);
+            this.deleteBarangPembelian.Name = "deleteBarangPembelian";
+            this.deleteBarangPembelian.Size = new System.Drawing.Size(25, 20);
+            this.deleteBarangPembelian.TabIndex = 85;
+            this.deleteBarangPembelian.Text = "-";
+            this.deleteBarangPembelian.UseVisualStyleBackColor = true;
+            this.deleteBarangPembelian.Click += new System.EventHandler(this.deleteBarangPembelian_Click);
             // 
-            // button4
+            // updateBarangPembelian
             // 
-            this.button4.Location = new System.Drawing.Point(1298, 100);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(25, 20);
-            this.button4.TabIndex = 84;
-            this.button4.Text = "u";
-            this.button4.UseVisualStyleBackColor = true;
+            this.updateBarangPembelian.Enabled = false;
+            this.updateBarangPembelian.Location = new System.Drawing.Point(1298, 100);
+            this.updateBarangPembelian.Name = "updateBarangPembelian";
+            this.updateBarangPembelian.Size = new System.Drawing.Size(25, 20);
+            this.updateBarangPembelian.TabIndex = 84;
+            this.updateBarangPembelian.Text = "u";
+            this.updateBarangPembelian.UseVisualStyleBackColor = true;
+            this.updateBarangPembelian.Click += new System.EventHandler(this.updateBarangPembelian_Click);
             // 
-            // button6
+            // addBarangPembelian
             // 
-            this.button6.Location = new System.Drawing.Point(1274, 100);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(25, 20);
-            this.button6.TabIndex = 82;
-            this.button6.Text = "+";
-            this.button6.UseVisualStyleBackColor = true;
+            this.addBarangPembelian.Location = new System.Drawing.Point(1274, 100);
+            this.addBarangPembelian.Name = "addBarangPembelian";
+            this.addBarangPembelian.Size = new System.Drawing.Size(25, 20);
+            this.addBarangPembelian.TabIndex = 82;
+            this.addBarangPembelian.Text = "+";
+            this.addBarangPembelian.UseVisualStyleBackColor = true;
+            this.addBarangPembelian.Click += new System.EventHandler(this.addBarangPembelian_Click);
             // 
             // label14
             // 
@@ -964,9 +946,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(1024, 84);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 16);
+            this.label15.Size = new System.Drawing.Size(59, 16);
             this.label15.TabIndex = 81;
-            this.label15.Text = "Diskon";
+            this.label15.Text = "Diskon (%)";
             // 
             // label16
             // 
@@ -1007,78 +989,81 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(7, 87);
+            this.label20.Location = new System.Drawing.Point(5, 84);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(70, 16);
             this.label20.TabIndex = 72;
             this.label20.Text = "Kode Barang";
             // 
-            // textBox5
+            // txtSubTotalPembelian
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(1118, 100);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(147, 20);
-            this.textBox5.TabIndex = 79;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSubTotalPembelian.Enabled = false;
+            this.txtSubTotalPembelian.Location = new System.Drawing.Point(1118, 100);
+            this.txtSubTotalPembelian.Name = "txtSubTotalPembelian";
+            this.txtSubTotalPembelian.Size = new System.Drawing.Size(147, 20);
+            this.txtSubTotalPembelian.TabIndex = 79;
+            this.txtSubTotalPembelian.Text = "0";
+            this.txtSubTotalPembelian.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox6
+            // txtDiskonBarangPembelian
             // 
-            this.textBox6.Location = new System.Drawing.Point(1027, 101);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(85, 20);
-            this.textBox6.TabIndex = 78;
-            this.textBox6.Text = "0";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDiskonBarangPembelian.Location = new System.Drawing.Point(1027, 101);
+            this.txtDiskonBarangPembelian.Name = "txtDiskonBarangPembelian";
+            this.txtDiskonBarangPembelian.Size = new System.Drawing.Size(85, 20);
+            this.txtDiskonBarangPembelian.TabIndex = 78;
+            this.txtDiskonBarangPembelian.Text = "0";
+            this.txtDiskonBarangPembelian.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDiskonBarangPembelian.TextChanged += new System.EventHandler(this.txtDiskonBarangPembelian_TextChanged);
             // 
-            // textBox7
+            // txtJumlahBarangPembelian
             // 
-            this.textBox7.Location = new System.Drawing.Point(907, 101);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(114, 20);
-            this.textBox7.TabIndex = 76;
-            this.textBox7.Text = "0";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtJumlahBarangPembelian.Location = new System.Drawing.Point(907, 101);
+            this.txtJumlahBarangPembelian.Name = "txtJumlahBarangPembelian";
+            this.txtJumlahBarangPembelian.Size = new System.Drawing.Size(114, 20);
+            this.txtJumlahBarangPembelian.TabIndex = 76;
+            this.txtJumlahBarangPembelian.Text = "0";
+            this.txtJumlahBarangPembelian.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtJumlahBarangPembelian.TextChanged += new System.EventHandler(this.txtJumlahBarangPembelian_TextChanged);
             // 
-            // textBox8
+            // txtHargaBarangPembelian
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(750, 100);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(151, 20);
-            this.textBox8.TabIndex = 73;
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtHargaBarangPembelian.Location = new System.Drawing.Point(750, 100);
+            this.txtHargaBarangPembelian.Name = "txtHargaBarangPembelian";
+            this.txtHargaBarangPembelian.Size = new System.Drawing.Size(151, 20);
+            this.txtHargaBarangPembelian.TabIndex = 73;
+            this.txtHargaBarangPembelian.Text = "0";
+            this.txtHargaBarangPembelian.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtHargaBarangPembelian.TextChanged += new System.EventHandler(this.txtHargaBarangPembelian_TextChanged);
             // 
-            // textBox9
+            // txtSatuanBarangPembelian
             // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(617, 101);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(127, 20);
-            this.textBox9.TabIndex = 71;
+            this.txtSatuanBarangPembelian.Enabled = false;
+            this.txtSatuanBarangPembelian.Location = new System.Drawing.Point(617, 101);
+            this.txtSatuanBarangPembelian.Name = "txtSatuanBarangPembelian";
+            this.txtSatuanBarangPembelian.Size = new System.Drawing.Size(127, 20);
+            this.txtSatuanBarangPembelian.TabIndex = 71;
             // 
-            // textBox10
+            // txtNamaBarangPembelian
             // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(215, 101);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(396, 20);
-            this.textBox10.TabIndex = 70;
+            this.txtNamaBarangPembelian.Enabled = false;
+            this.txtNamaBarangPembelian.Location = new System.Drawing.Point(215, 101);
+            this.txtNamaBarangPembelian.Name = "txtNamaBarangPembelian";
+            this.txtNamaBarangPembelian.Size = new System.Drawing.Size(396, 20);
+            this.txtNamaBarangPembelian.TabIndex = 70;
             // 
-            // textBox11
+            // txtKodeBarangPembelian
             // 
-            this.textBox11.Location = new System.Drawing.Point(7, 101);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(202, 20);
-            this.textBox11.TabIndex = 69;
+            this.txtKodeBarangPembelian.Location = new System.Drawing.Point(7, 101);
+            this.txtKodeBarangPembelian.Name = "txtKodeBarangPembelian";
+            this.txtKodeBarangPembelian.Size = new System.Drawing.Size(202, 20);
+            this.txtKodeBarangPembelian.TabIndex = 69;
+            this.txtKodeBarangPembelian.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKodeBarangPembelian_KeyDown);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtFakturPembelian);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Location = new System.Drawing.Point(7, 5);
             this.groupBox2.Name = "groupBox2";
@@ -1096,35 +1081,18 @@
             this.label24.TabIndex = 5;
             this.label24.Text = "Transaksi Pembelian";
             // 
-            // textBox3
+            // txtFakturPembelian
             // 
-            this.textBox3.Location = new System.Drawing.Point(91, 10);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(140, 20);
-            this.textBox3.TabIndex = 0;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(16, 13);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 13);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Tanggal";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(91, 40);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(140, 20);
-            this.textBox4.TabIndex = 2;
+            this.txtFakturPembelian.Location = new System.Drawing.Point(91, 32);
+            this.txtFakturPembelian.Name = "txtFakturPembelian";
+            this.txtFakturPembelian.Size = new System.Drawing.Size(140, 20);
+            this.txtFakturPembelian.TabIndex = 2;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(16, 43);
+            this.label13.Location = new System.Drawing.Point(16, 35);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 13);
             this.label13.TabIndex = 3;
@@ -1164,6 +1132,7 @@
             this.buttonAdd.TabIndex = 169;
             this.buttonAdd.Text = "Tambah Barang";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonUpdate
             // 
@@ -1173,6 +1142,7 @@
             this.buttonUpdate.TabIndex = 168;
             this.buttonUpdate.Text = "Perbarui Info Barang";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // label27
             // 
@@ -1219,8 +1189,9 @@
             this.dgMasterBarang.AllowUserToDeleteRows = false;
             this.dgMasterBarang.AllowUserToResizeColumns = false;
             this.dgMasterBarang.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgMasterBarang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgMasterBarang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgMasterBarang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgMasterBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMasterBarang.Location = new System.Drawing.Point(9, 14);
             this.dgMasterBarang.Name = "dgMasterBarang";
@@ -1228,15 +1199,14 @@
             this.dgMasterBarang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMasterBarang.Size = new System.Drawing.Size(1319, 272);
             this.dgMasterBarang.TabIndex = 21;
+            this.dgMasterBarang.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgMasterBarang_MouseClick);
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.groupBox4.Controls.Add(this.textBox15);
+            this.groupBox4.Controls.Add(this.txtSatuan);
             this.groupBox4.Controls.Add(this.label39);
-            this.groupBox4.Controls.Add(this.textBox18);
-            this.groupBox4.Controls.Add(this.label28);
-            this.groupBox4.Controls.Add(this.txtHargaBeli);
+            this.groupBox4.Controls.Add(this.txtHargaJual);
             this.groupBox4.Controls.Add(this.txtNamaBarang);
             this.groupBox4.Controls.Add(this.txtIdBarang);
             this.groupBox4.Controls.Add(this.lblHargaBeli);
@@ -1248,47 +1218,30 @@
             this.groupBox4.TabIndex = 164;
             this.groupBox4.TabStop = false;
             // 
-            // textBox15
+            // txtSatuan
             // 
-            this.textBox15.Location = new System.Drawing.Point(107, 67);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(192, 20);
-            this.textBox15.TabIndex = 13;
+            this.txtSatuan.Location = new System.Drawing.Point(107, 67);
+            this.txtSatuan.Name = "txtSatuan";
+            this.txtSatuan.Size = new System.Drawing.Size(192, 20);
+            this.txtSatuan.TabIndex = 13;
             // 
             // label39
             // 
             this.label39.AutoSize = true;
             this.label39.Location = new System.Drawing.Point(6, 70);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(51, 16);
+            this.label39.Size = new System.Drawing.Size(42, 16);
             this.label39.TabIndex = 12;
-            this.label39.Text = "Kategori";
+            this.label39.Text = "Satuan";
             // 
-            // textBox18
+            // txtHargaJual
             // 
-            this.textBox18.Location = new System.Drawing.Point(107, 118);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(192, 20);
-            this.textBox18.TabIndex = 11;
-            this.textBox18.Text = "0";
-            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(6, 121);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(98, 16);
-            this.label28.TabIndex = 10;
-            this.label28.Text = "Harga Jual Barang";
-            // 
-            // txtHargaBeli
-            // 
-            this.txtHargaBeli.Location = new System.Drawing.Point(107, 92);
-            this.txtHargaBeli.Name = "txtHargaBeli";
-            this.txtHargaBeli.Size = new System.Drawing.Size(192, 20);
-            this.txtHargaBeli.TabIndex = 9;
-            this.txtHargaBeli.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtHargaJual.Location = new System.Drawing.Point(107, 92);
+            this.txtHargaJual.Name = "txtHargaJual";
+            this.txtHargaJual.Size = new System.Drawing.Size(192, 20);
+            this.txtHargaJual.TabIndex = 9;
+            this.txtHargaJual.Text = "0";
+            this.txtHargaJual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtNamaBarang
             // 
@@ -1309,9 +1262,9 @@
             this.lblHargaBeli.AutoSize = true;
             this.lblHargaBeli.Location = new System.Drawing.Point(6, 95);
             this.lblHargaBeli.Name = "lblHargaBeli";
-            this.lblHargaBeli.Size = new System.Drawing.Size(42, 16);
+            this.lblHargaBeli.Size = new System.Drawing.Size(98, 16);
             this.lblHargaBeli.TabIndex = 2;
-            this.lblHargaBeli.Text = "Satuan";
+            this.lblHargaBeli.Text = "Harga Jual Barang";
             // 
             // lblNamaBarang
             // 
@@ -1670,6 +1623,17 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBoxUser
+            // 
+            this.pictureBoxUser.ErrorImage = global::Software_Toko.Properties.Resources.employee;
+            this.pictureBoxUser.Image = global::Software_Toko.Properties.Resources.employee;
+            this.pictureBoxUser.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(62, 66);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxUser.TabIndex = 4;
+            this.pictureBoxUser.TabStop = false;
+            // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
@@ -1709,17 +1673,6 @@
             this.label33.TabIndex = 0;
             this.label33.Text = "Toserba Bali Tunjung Media";
             // 
-            // pictureBoxUser
-            // 
-            this.pictureBoxUser.ErrorImage = global::Software_Toko.Properties.Resources.employee;
-            this.pictureBoxUser.Image = global::Software_Toko.Properties.Resources.employee;
-            this.pictureBoxUser.Location = new System.Drawing.Point(3, 3);
-            this.pictureBoxUser.Name = "pictureBoxUser";
-            this.pictureBoxUser.Size = new System.Drawing.Size(62, 66);
-            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxUser.TabIndex = 4;
-            this.pictureBoxUser.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1745,7 +1698,7 @@
             this.groupBox1.PerformLayout();
             this.tabPembelian.ResumeLayout(false);
             this.tabPembelian.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPembelian)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabMaster.ResumeLayout(false);
@@ -1773,9 +1726,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dvgPegawai)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1804,9 +1757,7 @@
         private System.Windows.Forms.TabPage tabPegawai;
         private System.Windows.Forms.TabPage tabBantuan;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFakturPenjualan;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblIdUser;
         private System.Windows.Forms.Label lblUsername;
@@ -1814,16 +1765,16 @@
         private System.Windows.Forms.PictureBox pictureBoxUser;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button bayarPenjualan;
         private System.Windows.Forms.Label lblChange;
-        private System.Windows.Forms.TextBox txtChange;
+        private System.Windows.Forms.TextBox kembalianPenjualan;
         private System.Windows.Forms.Label lblPayment;
-        private System.Windows.Forms.TextBox txtPay;
-        private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.TextBox pembayaranPenjualan;
+        private System.Windows.Forms.TextBox txtTotalPenjualan;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button cmdDelete;
-        private System.Windows.Forms.Button cmdUpdate;
-        private System.Windows.Forms.Button cmdAdd;
+        private System.Windows.Forms.Button deleteBarangPenjualan;
+        private System.Windows.Forms.Button updateBarangPenjualan;
+        private System.Windows.Forms.Button addBarangPenjualan;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -1831,16 +1782,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.TextBox txtDiscount;
-        private System.Windows.Forms.TextBox txtQty;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtUnit;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox txtSubTotalPenjualan;
+        private System.Windows.Forms.TextBox txtDiskonBarangPenjualan;
+        private System.Windows.Forms.TextBox txtJumlahBarangPenjualan;
+        private System.Windows.Forms.TextBox txtHargaBarangPenjualan;
+        private System.Windows.Forms.TextBox txtSatuanBarangPenjualan;
+        private System.Windows.Forms.TextBox txtNamaBarangPenjualan;
+        private System.Windows.Forms.TextBox txtKodeBarangPenjualan;
+        private System.Windows.Forms.Button deleteBarangPembelian;
+        private System.Windows.Forms.Button updateBarangPembelian;
+        private System.Windows.Forms.Button addBarangPembelian;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
@@ -1848,36 +1799,32 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtSubTotalPembelian;
+        private System.Windows.Forms.TextBox txtDiskonBarangPembelian;
+        private System.Windows.Forms.TextBox txtJumlahBarangPembelian;
+        private System.Windows.Forms.TextBox txtHargaBarangPembelian;
+        private System.Windows.Forms.TextBox txtSatuanBarangPembelian;
+        private System.Windows.Forms.TextBox txtNamaBarangPembelian;
+        private System.Windows.Forms.TextBox txtKodeBarangPembelian;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtFakturPembelian;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.DataGridView dgMasterBarang;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtHargaBeli;
+        private System.Windows.Forms.TextBox txtHargaJual;
         private System.Windows.Forms.TextBox txtNamaBarang;
         private System.Windows.Forms.TextBox txtIdBarang;
         private System.Windows.Forms.Label lblHargaBeli;
         private System.Windows.Forms.Label lblNamaBarang;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridViewPenjualan;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewPembelian;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -1920,12 +1867,12 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button bayarPembelian;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtKembalianPembelian;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtPembayaranPembelian;
+        private System.Windows.Forms.TextBox txtTotalPembelian;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Panel panel5;
@@ -1936,7 +1883,7 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnUbahPassword;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtSatuan;
         private System.Windows.Forms.Label label39;
     }
 }

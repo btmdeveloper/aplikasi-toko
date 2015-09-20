@@ -16,5 +16,10 @@ namespace Software_Toko
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

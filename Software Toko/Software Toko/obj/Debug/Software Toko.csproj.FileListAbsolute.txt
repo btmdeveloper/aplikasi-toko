@@ -42,3 +42,4 @@ F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software
 F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software_Toko.Properties.Resources.resources
 F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software Toko.csproj.GenerateResource.Cache
 F:\Aplikasi\Bali Tunjung Media\Software Toko-v2\Software Toko\obj\Debug\Software_Toko.Tambah_Pegawai.resources
+D:\Tunjung\Software Toko\trunk\Software Toko\Software Toko\obj\Debug\Software_Toko.Tambah_Pegawai.resources
