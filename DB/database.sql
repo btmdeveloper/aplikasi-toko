@@ -16,6 +16,25 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`db_retail` /*!40100 DEFAULT CHARACTER S
 
 USE `db_retail`;
 
+/*Table structure for table `tb_detail_hutang` */
+
+DROP TABLE IF EXISTS `tb_detail_hutang`;
+
+CREATE TABLE `tb_detail_hutang` (
+  `id_detail` int(100) NOT NULL AUTO_INCREMENT,
+  `no_faktur` varchar(20) DEFAULT NULL,
+  `hutang` double DEFAULT NULL,
+  `pembayaran` double DEFAULT NULL,
+  `kembalian` double DEFAULT NULL,
+  `sisa_hutang` double DEFAULT NULL,
+  `tgl` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_detail`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tb_detail_hutang` */
+
+insert  into `tb_detail_hutang`(`id_detail`,`no_faktur`,`hutang`,`pembayaran`,`kembalian`,`sisa_hutang`,`tgl`) values (1,'8',-2000,1500,-500,-500,'2015-09-21 10:01:52'),(2,'8',-500,100,-400,-400,'2015-09-21 10:02:33'),(3,'8',-400,500,100,0,'2015-09-21 10:02:41');
+
 /*Table structure for table `tb_detail_pembelian` */
 
 DROP TABLE IF EXISTS `tb_detail_pembelian`;
@@ -54,11 +73,11 @@ CREATE TABLE `tb_detail_penjualan` (
   `stok_awal` int(10) DEFAULT NULL,
   `stok_akhir` int(10) DEFAULT NULL,
   PRIMARY KEY (`id_detail`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tb_detail_penjualan` */
 
-insert  into `tb_detail_penjualan`(`id_detail`,`no_faktur`,`id_barang`,`harga_jual`,`jumlah_barang`,`diskon`,`total_jual`,`harga_beli`,`total_beli`,`stok_awal`,`stok_akhir`) values (1,'1','1',2000,2,0,4000,1000,2000,13,11),(2,'1','1',2000,1,0,2000,2000,2000,11,10),(3,'1','1',2000,1,0,2000,900,900,10,9),(4,'2','1',2000,3,0,6000,1000,3000,13,10),(5,'2','1',2000,1,0,2000,2000,2000,10,9),(6,'2','2',3000,3,0,9000,1000,3000,13,10),(7,'2','2',3000,1,0,3000,1000,1000,10,9),(8,'3','1',2000,1,0,2000,900,900,9,8),(9,'3','1',2000,8,10,14400,900,7200,8,0);
+insert  into `tb_detail_penjualan`(`id_detail`,`no_faktur`,`id_barang`,`harga_jual`,`jumlah_barang`,`diskon`,`total_jual`,`harga_beli`,`total_beli`,`stok_awal`,`stok_akhir`) values (1,'1','1',2000,2,0,4000,1000,2000,13,11),(2,'1','1',2000,1,0,2000,2000,2000,11,10),(3,'1','1',2000,1,0,2000,900,900,10,9),(4,'2','1',2000,3,0,6000,1000,3000,13,10),(5,'2','1',2000,1,0,2000,2000,2000,10,9),(6,'2','2',3000,3,0,9000,1000,3000,13,10),(7,'2','2',3000,1,0,3000,1000,1000,10,9),(8,'3','1',2000,1,0,2000,900,900,9,8),(9,'3','1',2000,8,10,14400,900,7200,8,0),(10,'','2',3000,1,0,3000,1000,1000,10,9),(11,'','2',3000,2,0,6000,1000,2000,9,7),(12,'','1',2000,3,0,6000,1000,3000,6,3),(13,'','1',2000,2,0,4000,2000,4000,3,1),(14,'','1',2000,1,0,2000,900,900,1,0),(15,'4','1',2000,1,0,2000,900,900,5,4),(16,'4','2',3000,1,0,3000,1000,1000,6,5),(17,'4','3',3000,1,0,3000,0,0,2,1),(18,'4','4',2000,1,0,2000,0,0,3,2),(19,'6','1',2000,1,0,2000,900,900,4,3),(20,'7','1',2000,1,0,2000,900,900,3,2),(21,'8','1',2000,1,0,2000,900,900,2,1),(22,'9','2',3000,1,0,3000,1000,1000,5,4),(23,'9','3',3000,1,0,3000,0,0,1,0),(24,'9','5',2500,2,0,5000,0,0,4,2);
 
 /*Table structure for table `tb_harga_jual` */
 
@@ -73,6 +92,21 @@ CREATE TABLE `tb_harga_jual` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tb_harga_jual` */
+
+/*Table structure for table `tb_hutang` */
+
+DROP TABLE IF EXISTS `tb_hutang`;
+
+CREATE TABLE `tb_hutang` (
+  `id_hutang` int(100) NOT NULL AUTO_INCREMENT,
+  `no_faktur` varchar(20) DEFAULT NULL,
+  `hutang` double DEFAULT NULL,
+  PRIMARY KEY (`id_hutang`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tb_hutang` */
+
+insert  into `tb_hutang`(`id_hutang`,`no_faktur`,`hutang`) values (1,'8',0),(2,'9',-6000);
 
 /*Table structure for table `tb_kategori_barang` */
 
@@ -156,7 +190,7 @@ CREATE TABLE `tb_penjualan` (
 
 /*Data for the table `tb_penjualan` */
 
-insert  into `tb_penjualan`(`no_faktur`,`tgl_penjualan`,`total_penjualan`,`total_bayar`,`kembali`,`id_pegawai`) values ('1','2015-09-20 14:47:14',8000,10000,2000,'00001'),('2','2015-09-20 14:50:07',20000,100000,80000,'00001'),('3','2015-09-20 14:54:05',16400,120000,103600,'00001');
+insert  into `tb_penjualan`(`no_faktur`,`tgl_penjualan`,`total_penjualan`,`total_bayar`,`kembali`,`id_pegawai`) values ('','2015-09-20 15:40:09',21000,25000,4000,'00001'),('1','2015-09-20 14:47:14',8000,10000,2000,'00001'),('2','2015-09-20 14:50:07',20000,100000,80000,'00001'),('3','2015-09-20 14:54:05',16400,120000,103600,'00001'),('4','2015-09-20 15:48:15',10000,10000,0,'00001'),('6','2015-09-21 09:34:54',2000,1000,-1000,'00001'),('7','2015-09-21 09:36:36',2000,0,-2000,'00001'),('8','2015-09-21 09:38:09',2000,0,-2000,'00001'),('9','2015-09-21 10:01:30',11000,5000,-6000,'00001');
 
 /*Table structure for table `tb_stok` */
 
@@ -173,7 +207,7 @@ CREATE TABLE `tb_stok` (
 
 /*Data for the table `tb_stok` */
 
-insert  into `tb_stok`(`id_stok`,`id_barang`,`stok_barang`,`harga_beli`,`tanggal_stok`) values (1,'1',0,0,'2015-09-20 07:15:22'),(2,'2',0,1000,'2015-09-20 14:50:07'),(3,'3',0,0,'2015-09-20 07:16:51'),(4,'1',0,4,'2015-09-20 07:16:51'),(5,'4',0,0,'2015-09-20 07:44:49'),(6,'5',0,0,'2015-09-20 07:52:39'),(7,'1',0,1000,'2015-09-20 14:50:07'),(8,'1',0,2000,'2015-09-20 14:50:07'),(9,'1',0,900,'2015-09-20 14:54:05'),(10,'2',9,1000,'2015-09-20 14:50:07');
+insert  into `tb_stok`(`id_stok`,`id_barang`,`stok_barang`,`harga_beli`,`tanggal_stok`) values (1,'1',0,0,'2015-09-20 07:15:22'),(2,'2',0,1000,'2015-09-20 15:40:09'),(3,'3',0,0,'2015-09-21 10:01:30'),(4,'1',0,4,'2015-09-20 07:16:51'),(5,'4',2,0,'2015-09-20 15:48:16'),(6,'5',2,0,'2015-09-21 10:01:31'),(7,'1',0,1000,'2015-09-20 15:40:09'),(8,'1',0,2000,'2015-09-20 15:40:09'),(9,'1',1,900,'2015-09-21 09:38:09'),(10,'2',4,1000,'2015-09-21 10:01:30');
 
 /*Table structure for table `tb_user` */
 
@@ -192,7 +226,7 @@ CREATE TABLE `tb_user` (
 
 /*Data for the table `tb_user` */
 
-insert  into `tb_user`(`id_user`,`id_pegawai`,`role`,`namauser`,`sandi`,`status`,`last_login`) values (1,'00001','admin','admin','admin',1,'2015-09-20 14:52:52');
+insert  into `tb_user`(`id_user`,`id_pegawai`,`role`,`namauser`,`sandi`,`status`,`last_login`) values (1,'00001','admin','admin','admin',1,'2015-09-21 10:02:25');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

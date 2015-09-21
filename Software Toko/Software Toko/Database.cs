@@ -498,6 +498,97 @@ namespace Software_Toko
             }
         }
 
+        public void insertTbHutang(string no_faktur, double hutang)
+        {
+            con = new MySqlConnection(konf);
+            MySqlCommand query;
+            con.Open();
+            try
+            {
+
+                query = new MySqlCommand();
+                query.Connection = con;
+                query.CommandText = "INSERT INTO tb_hutang(no_faktur, hutang) VALUES ('" + no_faktur + "','" + hutang + "')";
+                query.ExecuteNonQuery();
+                query.Dispose();
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void updateTbHutang(string no_faktur, double hutang)
+        {
+            con = new MySqlConnection(konf);
+            MySqlCommand query;
+            con.Open();
+            try
+            {
+
+                query = new MySqlCommand();
+                query.Connection = con;
+                query.CommandText = "UPDATE tb_hutang SET hutang='" + hutang + "' WHERE no_faktur='" + no_faktur + "'";
+                query.ExecuteNonQuery();
+                query.Dispose();
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public DataTable showTbHutang()
+        {
+            con = new MySqlConnection(konf);
+            MySqlCommand query;
+            con.Open();
+            dt = new DataTable();
+            try
+            {
+
+                query = new MySqlCommand();
+                query.Connection = con;
+                query.CommandText = "SELECT id_hutang AS 'ID Hutang', no_faktur AS 'No. Faktur', hutang AS 'Hutang' FROM tb_hutang WHERE hutang<0";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query);
+                adapter.Fill(dt);
+                con.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return dt;
+            }
+        }
+
+        public void insertTbDetailHutang(string no_faktur, double hutang, double pembayaran, double kembalian, double sisa_hutang)
+        {
+            con = new MySqlConnection(konf);
+            MySqlCommand query;
+            con.Open();
+            try
+            {
+
+                query = new MySqlCommand();
+                query.Connection = con;
+                query.CommandText = "INSERT INTO tb_detail_hutang(no_faktur, hutang, pembayaran, kembalian, sisa_hutang, tgl) VALUES ('" + no_faktur + "','" + hutang + "','" + pembayaran + "','" + kembalian + "','" + sisa_hutang + "',NOW())";
+                query.ExecuteNonQuery();
+                query.Dispose();
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         public DataTable rePrint(string bill)
         {
             con = new MySqlConnection(konf);
@@ -510,7 +601,7 @@ namespace Software_Toko
                 query = new MySqlCommand();
                 query.Connection = con;
                 //query.CommandText = "select * from '" + tabel + "'";
-                query.CommandText = "SELECT * FROM(SELECT tdp.no_faktur, tdp.id_barang, tmb.nama_barang, SUM(tdp.jumlah_barang) AS sum_jml, tdp.harga_jual,diskon,SUM(total_jual) AS sum_totalJual, tp.total_penjualan, tp.total_bayar,tp.kembali,tp.id_pegawai " +
+                query.CommandText = "SELECT * FROM(SELECT tdp.no_faktur, tdp.id_barang, tmb.nama_barang, SUM(tdp.jumlah_barang) AS sum_jml, tdp.harga_jual,diskon,SUM(total_jual) AS sum_totalJual, tp.total_penjualan, tp.total_bayar,tp.kembali,tp.id_pegawai,tp.tgl_penjualan " +
                 "FROM tb_detail_penjualan tdp INNER JOIN tb_master_barang tmb ON tdp.id_barang=tmb.id_barang " +
                 "INNER JOIN tb_penjualan tp ON tdp.no_faktur=tp.no_faktur " +
                 "GROUP BY tmb.id_barang, tdp.no_faktur " +
@@ -527,5 +618,7 @@ namespace Software_Toko
                 return dt;
             }
         }
+
+  
     }
 }

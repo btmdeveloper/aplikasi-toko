@@ -633,33 +633,76 @@ namespace Software_Toko
 
         private void addBarangPenjualan_Click(object sender, EventArgs e)
         {
-            int status = 0;
+            int stokDb, stokInput=0;
+            DataTable stk = new DataTable();
+            stk = databaseCRUD.selectTotalStok(txtKodeBarangPenjualan.Text.ToString());
+            stokDb = Convert.ToInt32(stk.Rows[0][0].ToString());
+            
+
             if (dataGridViewPenjualan.Rows.Count > 1)
             {
                 int j = (dataGridViewPenjualan.Rows.Count) - 2;
                 for (int i = 0; i <= j; i++)
                 {
                     string id_barang = dataGridViewPenjualan.Rows[i].Cells[0].Value.ToString();
-                    double hrg_beli = Convert.ToDouble(dataGridViewPenjualan.Rows[i].Cells[3].Value.ToString());
                     int stok = Convert.ToInt32(dataGridViewPenjualan.Rows[i].Cells[4].Value.ToString());
-                    double diskon2 = Convert.ToDouble(dataGridViewPenjualan.Rows[i].Cells[5].Value.ToString());
-                    double total2 = Convert.ToDouble(dataGridViewPenjualan.Rows[i].Cells[6].Value.ToString());
 
-                    if (id_barang == txtKodeBarangPenjualan.Text.ToString() && hrg_beli == double.Parse(txtHargaBarangPenjualan.Text.ToString()) && diskon2 == Convert.ToDouble(txtDiskonBarangPenjualan.Text.ToString()))
+                    if (id_barang == txtKodeBarangPenjualan.Text.ToString())
                     {
-                        stok = stok + Convert.ToInt32(txtJumlahBarangPenjualan.Text.ToString());
-                        total2 = total2 + double.Parse(txtSubTotalPenjualan.Text.ToString()); // Convert.ToDouble(txtTotal.Text.ToString());
-
-                        dataGridViewPenjualan.Rows[i].Cells[4].Value = stok.ToString();
-                        dataGridViewPenjualan.Rows[i].Cells[6].Value = total2.ToString();
-                        status = 1;
+                        stokInput = stok + Convert.ToInt32(txtJumlahBarangPenjualan.Text.ToString());
                         break;
                     }
                 }
+            }
+            else
+            {
+                stokInput = Convert.ToInt32(txtJumlahBarangPenjualan.Text.ToString());
+            }
 
-                if (status == 0)
+            if (stokDb >= stokInput)
+            {
+                int status = 0;
+                if (dataGridViewPenjualan.Rows.Count > 1)
                 {
-                    MessageBox.Show("test 1");
+                    int j = (dataGridViewPenjualan.Rows.Count) - 2;
+                    for (int i = 0; i <= j; i++)
+                    {
+                        string id_barang = dataGridViewPenjualan.Rows[i].Cells[0].Value.ToString();
+                        double hrg_beli = Convert.ToDouble(dataGridViewPenjualan.Rows[i].Cells[3].Value.ToString());
+                        int stok = Convert.ToInt32(dataGridViewPenjualan.Rows[i].Cells[4].Value.ToString());
+                        double diskon2 = Convert.ToDouble(dataGridViewPenjualan.Rows[i].Cells[5].Value.ToString());
+                        double total2 = Convert.ToDouble(dataGridViewPenjualan.Rows[i].Cells[6].Value.ToString());
+
+                        if (id_barang == txtKodeBarangPenjualan.Text.ToString() && hrg_beli == double.Parse(txtHargaBarangPenjualan.Text.ToString()) && diskon2 == Convert.ToDouble(txtDiskonBarangPenjualan.Text.ToString()))
+                        {
+                            stok = stok + Convert.ToInt32(txtJumlahBarangPenjualan.Text.ToString());
+                            total2 = total2 + double.Parse(txtSubTotalPenjualan.Text.ToString()); // Convert.ToDouble(txtTotal.Text.ToString());
+
+                            dataGridViewPenjualan.Rows[i].Cells[4].Value = stok.ToString();
+                            dataGridViewPenjualan.Rows[i].Cells[6].Value = total2.ToString();
+                            status = 1;
+                            break;
+                        }
+                    }
+
+                    if (status == 0)
+                    {
+                        MessageBox.Show("test 1");
+                        int n = dataGridViewPenjualan.Rows.Add();
+
+                        dataGridViewPenjualan.Rows[n].Cells[0].Value = txtKodeBarangPenjualan.Text.ToString();
+                        dataGridViewPenjualan.Rows[n].Cells[1].Value = txtNamaBarangPenjualan.Text.ToString();
+                        dataGridViewPenjualan.Rows[n].Cells[2].Value = txtSatuanBarangPenjualan.Text.ToString();
+                        dataGridViewPenjualan.Rows[n].Cells[3].Value = txtHargaBarangPenjualan.Text.ToString();
+                        dataGridViewPenjualan.Rows[n].Cells[4].Value = txtJumlahBarangPenjualan.Text.ToString();
+                        dataGridViewPenjualan.Rows[n].Cells[5].Value = txtDiskonBarangPenjualan.Text.ToString();
+                        dataGridViewPenjualan.Rows[n].Cells[6].Value = txtSubTotalPenjualan.Text.ToString();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("test2");
                     int n = dataGridViewPenjualan.Rows.Add();
 
                     dataGridViewPenjualan.Rows[n].Cells[0].Value = txtKodeBarangPenjualan.Text.ToString();
@@ -669,41 +712,50 @@ namespace Software_Toko
                     dataGridViewPenjualan.Rows[n].Cells[4].Value = txtJumlahBarangPenjualan.Text.ToString();
                     dataGridViewPenjualan.Rows[n].Cells[5].Value = txtDiskonBarangPenjualan.Text.ToString();
                     dataGridViewPenjualan.Rows[n].Cells[6].Value = txtSubTotalPenjualan.Text.ToString();
-                }
 
+                }
+                resetPenjualan();
+                totalKeseluruhanPenjualan();
+                txtKodeBarangPenjualan.Focus();
             }
             else
             {
-                MessageBox.Show("test2");
-                int n = dataGridViewPenjualan.Rows.Add();
-
-                dataGridViewPenjualan.Rows[n].Cells[0].Value = txtKodeBarangPenjualan.Text.ToString();
-                dataGridViewPenjualan.Rows[n].Cells[1].Value = txtNamaBarangPenjualan.Text.ToString();
-                dataGridViewPenjualan.Rows[n].Cells[2].Value = txtSatuanBarangPenjualan.Text.ToString();
-                dataGridViewPenjualan.Rows[n].Cells[3].Value = txtHargaBarangPenjualan.Text.ToString();
-                dataGridViewPenjualan.Rows[n].Cells[4].Value = txtJumlahBarangPenjualan.Text.ToString();
-                dataGridViewPenjualan.Rows[n].Cells[5].Value = txtDiskonBarangPenjualan.Text.ToString();
-                dataGridViewPenjualan.Rows[n].Cells[6].Value = txtSubTotalPenjualan.Text.ToString();
-
+                txtJumlahBarangPenjualan.Focus();
+                MessageBox.Show("Jumlah stok barang yang ada hanya " + stokDb);
             }
-            resetPenjualan();
-            totalKeseluruhanPenjualan();
-            txtKodeBarangPenjualan.Focus();
         }
 
         private void updateBarangPenjualan_Click(object sender, EventArgs e)
         {
-            dataGridViewPenjualan.SelectedRows[0].Cells[0].Value = txtKodeBarangPenjualan.Text.ToString();
-            dataGridViewPenjualan.SelectedRows[0].Cells[1].Value = txtNamaBarangPenjualan.Text.ToString();
-            dataGridViewPenjualan.SelectedRows[0].Cells[2].Value = txtSatuanBarangPenjualan.Text.ToString();
-            dataGridViewPenjualan.SelectedRows[0].Cells[3].Value = txtHargaBarangPenjualan.Text.ToString();
-            dataGridViewPenjualan.SelectedRows[0].Cells[4].Value = txtJumlahBarangPenjualan.Text.ToString();
-            dataGridViewPenjualan.SelectedRows[0].Cells[5].Value = txtDiskonBarangPenjualan.Text.ToString();
-            dataGridViewPenjualan.SelectedRows[0].Cells[6].Value = txtSubTotalPenjualan.Text.ToString();
+            int stokDb, stokInput;
+            DataTable stk = new DataTable();
+            stk = databaseCRUD.selectTotalStok(txtKodeBarangPenjualan.Text.ToString());
+            stokDb = Convert.ToInt32(stk.Rows[0][0].ToString());
+            stokInput = Convert.ToInt32(txtJumlahBarangPenjualan.Text.ToString());
 
-            resetPenjualan();
-            totalKeseluruhanPenjualan();
-            txtKodeBarangPenjualan.Focus();
+            if (stokDb >= stokInput)
+            {
+                dataGridViewPenjualan.SelectedRows[0].Cells[0].Value = txtKodeBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.SelectedRows[0].Cells[1].Value = txtNamaBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.SelectedRows[0].Cells[2].Value = txtSatuanBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.SelectedRows[0].Cells[3].Value = txtHargaBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.SelectedRows[0].Cells[4].Value = txtJumlahBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.SelectedRows[0].Cells[5].Value = txtDiskonBarangPenjualan.Text.ToString();
+                dataGridViewPenjualan.SelectedRows[0].Cells[6].Value = txtSubTotalPenjualan.Text.ToString();
+
+                resetPenjualan();
+                totalKeseluruhanPenjualan();
+                txtKodeBarangPenjualan.Focus();
+
+                addBarangPenjualan.Enabled = true;
+                updateBarangPenjualan.Enabled = false;
+                deleteBarangPenjualan.Enabled = false;
+            }
+            else
+            {
+                txtJumlahBarangPenjualan.Focus();
+                MessageBox.Show("Jumlah stok barang yang ada hanya " + stokDb);
+            }
         }
 
         private void deleteBarangPenjualan_Click(object sender, EventArgs e)
@@ -808,6 +860,10 @@ namespace Software_Toko
 
             MessageBox.Show("Save Success");
             resetPenjualan();
+            if (kembali < 0)
+            {
+                databaseCRUD.insertTbHutang(id_penjualan, kembali);
+            }
             dataGridViewPenjualan.Rows.Clear();
             dataGridViewPenjualan.Refresh();
         }
@@ -849,7 +905,7 @@ namespace Software_Toko
 
             e.Graphics.DrawString("ID Bill  : " + dt.Rows[0][0].ToString(), new Font("Courier New", 8, FontStyle.Regular), Brushes.Black, new Point(10, 60)); //(10,100) 25 kirikanan, 100 atas bawwah
             e.Graphics.DrawString("Employee : " + dt.Rows[0][10].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(10, 70));
-            e.Graphics.DrawString("Date     : " + DateTime.Now, new Font("Courier New", 8), Brushes.Black, new Point(10, 80));
+            e.Graphics.DrawString("Date     : " + dt.Rows[0][11].ToString(), new Font("Courier New", 8), Brushes.Black, new Point(10, 80));
 
             //// Draw line to screen.
             //e.Graphics.DrawLine(blackPen, point1, point2);
@@ -901,6 +957,12 @@ namespace Software_Toko
             e.Graphics.DrawString(" Terima Kasih", new Font("Courier New", 8), Brushes.Black, new Point(83, h));
 
             this.w = h;
+        }
+
+        private void btnHutang_Click(object sender, EventArgs e)
+        {
+            FormHutang hutang = new FormHutang();
+            hutang.ShowDialog();
         }
     }
 }

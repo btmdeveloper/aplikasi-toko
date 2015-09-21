@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -88,7 +88,6 @@
             this.txtTotalPenjualan = new System.Windows.Forms.TextBox();
             this.tabPembelian = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
             this.bayarPembelian = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.txtKembalianPembelian = new System.Windows.Forms.TextBox();
@@ -184,6 +183,7 @@
             this.label33 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.btnHutang = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabKasir.SuspendLayout();
@@ -332,6 +332,7 @@
             // tabKasir
             // 
             this.tabKasir.BackColor = System.Drawing.Color.White;
+            this.tabKasir.Controls.Add(this.btnHutang);
             this.tabKasir.Controls.Add(this.groupBox7);
             this.tabKasir.Controls.Add(this.label35);
             this.tabKasir.Controls.Add(this.dataGridViewPenjualan);
@@ -394,8 +395,8 @@
             this.dataGridViewPenjualan.AllowUserToOrderColumns = true;
             this.dataGridViewPenjualan.AllowUserToResizeColumns = false;
             this.dataGridViewPenjualan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridViewPenjualan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewPenjualan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewPenjualan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPenjualan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -552,7 +553,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(752, 90);
+            this.label6.Location = new System.Drawing.Point(752, 89);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 16);
             this.label6.TabIndex = 58;
@@ -729,7 +730,6 @@
             // 
             this.tabPembelian.BackColor = System.Drawing.Color.White;
             this.tabPembelian.Controls.Add(this.label21);
-            this.tabPembelian.Controls.Add(this.button7);
             this.tabPembelian.Controls.Add(this.bayarPembelian);
             this.tabPembelian.Controls.Add(this.label22);
             this.tabPembelian.Controls.Add(this.txtKembalianPembelian);
@@ -771,15 +771,6 @@
             this.label21.Size = new System.Drawing.Size(103, 43);
             this.label21.TabIndex = 111;
             this.label21.Text = "Total";
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(1005, 500);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(164, 33);
-            this.button7.TabIndex = 110;
-            this.button7.Text = "Cetak Ulang Faktur";
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // bayarPembelian
             // 
@@ -854,8 +845,8 @@
             this.dataGridViewPembelian.AllowUserToOrderColumns = true;
             this.dataGridViewPembelian.AllowUserToResizeColumns = false;
             this.dataGridViewPembelian.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridViewPembelian.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewPembelian.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewPembelian.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPembelian.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -975,7 +966,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(747, 85);
+            this.label17.Location = new System.Drawing.Point(747, 84);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(38, 16);
             this.label17.TabIndex = 77;
@@ -1202,8 +1193,8 @@
             this.dgMasterBarang.AllowUserToDeleteRows = false;
             this.dgMasterBarang.AllowUserToResizeColumns = false;
             this.dgMasterBarang.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgMasterBarang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgMasterBarang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgMasterBarang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgMasterBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMasterBarang.Location = new System.Drawing.Point(9, 14);
@@ -1700,6 +1691,16 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // btnHutang
+            // 
+            this.btnHutang.Location = new System.Drawing.Point(841, 506);
+            this.btnHutang.Name = "btnHutang";
+            this.btnHutang.Size = new System.Drawing.Size(164, 33);
+            this.btnHutang.TabIndex = 72;
+            this.btnHutang.Text = "Cek Faktur Hutang";
+            this.btnHutang.UseVisualStyleBackColor = true;
+            this.btnHutang.Click += new System.EventHandler(this.btnHutang_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1893,7 +1894,6 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button bayarPembelian;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtKembalianPembelian;
@@ -1914,6 +1914,7 @@
         private System.Windows.Forms.Label label39;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button btnHutang;
     }
 }
 
